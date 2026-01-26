@@ -599,6 +599,10 @@ $darker-bg: #050508;
 
     video {
       display: block;
+      // GPU acceleration for smooth playback during scroll
+      will-change: transform;
+      transform: translateZ(0);
+      backface-visibility: hidden;
     }
   }
 
