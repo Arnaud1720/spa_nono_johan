@@ -3,141 +3,110 @@
   <div class="about-hero">
     <div class="container">
       <div class="about-hero__content fade-in" #animatedSection>
-        <span class="section-label">// À PROPOS</span>
+        <span class="section-label">// POURQUOI NOJO</span>
         <h1 class="about-hero__title">
-          Développeur <span class="text-gradient">Passionné</span>
+          Votre SPA livrée en <span class="text-gradient">2-4 semaines</span>
         </h1>
         <p class="about-hero__description">
-          Je crée des expériences digitales uniques avec du code propre,
-          des animations fluides et une attention particulière aux détails.
+          Design moderne, animations fluides, performance maximale.
+          Vous vous concentrez sur votre business, je m'occupe du reste.
         </p>
+        <div class="about-hero__cta">
+          <a routerLink="/contact" class="btn btn--primary">
+            Démarrer mon projet
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+          <a routerLink="/projets" class="btn btn--outline">Voir mes réalisations</a>
+        </div>
       </div>
     </div>
     <div class="about-hero__grid"></div>
   </div>
 
-  <!-- Story Section -->
-  <div class="about-story section">
+  <!-- Metrics Section -->
+  <div class="about-metrics section">
     <div class="container">
-      <div class="story-content" #animatedSection>
-        <div class="story-text fade-in">
-          <h2><span class="code-comment">/*</span> Mon Histoire <span class="code-comment">*/</span></h2>
-          <p>
-            Passionné par le développement web et les nouvelles technologies,
-            je me spécialise dans la création de <strong>Single Page Applications</strong>
-            avec Angular et les technologies modernes du web.
-          </p>
-          <p>
-            Mon approche combine <strong>design soigné</strong>, <strong>animations fluides</strong>
-            et <strong>code performant</strong> pour créer des expériences utilisateur
-            qui sortent de l'ordinaire.
-          </p>
-          <p>
-            Chaque projet est une nouvelle aventure où je cherche à repousser
-            les limites du possible tout en gardant un code propre et maintenable.
-          </p>
-
-          <div class="story-stats">
-            <div class="stat">
-              <span class="stat__value">3+</span>
-              <span class="stat__label">Projets</span>
-            </div>
-            <div class="stat">
-              <span class="stat__value">100%</span>
-              <span class="stat__label">Passion</span>
-            </div>
-            <div class="stat">
-              <span class="stat__value">∞</span>
-              <span class="stat__label">Curiosité</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="story-terminal fade-in">
-          <div class="terminal-header">
-            <span class="terminal-dot red"></span>
-            <span class="terminal-dot yellow"></span>
-            <span class="terminal-dot green"></span>
-            <span class="terminal-title">about.sh</span>
-          </div>
-          <div class="terminal-body">
-            <p><span class="prompt">$</span> whoami</p>
-            <p class="output">Développeur Web Full Stack</p>
-            <p><span class="prompt">$</span> cat skills.txt</p>
-            <p class="output">Angular, TypeScript, SCSS</p>
-            <p class="output">GSAP, Three.js, Tauri</p>
-            <p class="output">Node.js, Firebase, Git</p>
-            <p><span class="prompt">$</span> echo $MOTIVATION</p>
-            <p class="output">"Créer des expériences uniques"</p>
-            <p><span class="prompt">$</span> <span class="cursor">_</span></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Values Section -->
-  <div class="about-values section">
-    <div class="container">
-      <div class="section-header fade-in" #animatedSection>
-        <span class="section-label">// VALEURS</span>
-        <h2>Ce qui me <span class="text-gradient">définit</span></h2>
-      </div>
-
-      <div class="values-grid">
-        @for (value of values; track value.title; let i = $index) {
-          <div class="value-card fade-in" [class]="'stagger-' + (i + 1)" #animatedSection>
-            <div class="value-card__icon">
-              @switch (value.icon) {
-                @case ('code') {
-                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <polyline points="16 18 22 12 16 6"></polyline>
-                    <polyline points="8 6 2 12 8 18"></polyline>
-                  </svg>
-                }
-                @case ('zap') {
-                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-                  </svg>
-                }
-                @case ('heart') {
-                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-                  </svg>
-                }
-                @case ('users') {
-                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                    <circle cx="9" cy="7" r="4"></circle>
-                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                  </svg>
-                }
-              }
-            </div>
-            <h3 class="value-card__title">{{ value.title }}</h3>
-            <p class="value-card__description">{{ value.description }}</p>
+      <div class="metrics-grid fade-in" #animatedSection>
+        @for (metric of metrics; track metric.label; let i = $index) {
+          <div class="metric-card" [class]="'stagger-' + (i + 1)">
+            <span class="metric-card__value">{{ metric.value }}</span>
+            <span class="metric-card__label">{{ metric.label }}</span>
+            <span class="metric-card__description">{{ metric.description }}</span>
           </div>
         }
       </div>
     </div>
   </div>
 
-  <!-- Timeline Section -->
-  <div class="about-timeline section">
+  <!-- Guarantees Section -->
+  <div class="about-guarantees section">
     <div class="container">
       <div class="section-header fade-in" #animatedSection>
-        <span class="section-label">// PARCOURS</span>
-        <h2>Mon <span class="text-gradient">évolution</span></h2>
+        <span class="section-label">// ENGAGEMENTS</span>
+        <h2>Ce que je vous <span class="text-gradient">garantis</span></h2>
+        <p class="section-subtitle">Des engagements concrets, pas des promesses en l'air.</p>
       </div>
 
-      <div class="timeline">
-        @for (item of timeline; track item.year; let i = $index) {
-          <div class="timeline-item fade-in" [class]="'stagger-' + (i + 1)" #animatedSection>
-            <div class="timeline-item__year">{{ item.year }}</div>
-            <div class="timeline-item__content">
-              <h3>{{ item.title }}</h3>
-              <p>{{ item.description }}</p>
+      <div class="guarantees-grid">
+        @for (guarantee of guarantees; track guarantee.title; let i = $index) {
+          <div class="guarantee-card fade-in" [class]="'stagger-' + (i + 1)" #animatedSection>
+            <div class="guarantee-card__icon">
+              @switch (guarantee.icon) {
+                @case ('rocket') {
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path>
+                    <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path>
+                    <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path>
+                    <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path>
+                  </svg>
+                }
+                @case ('shield') {
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    <path d="m9 12 2 2 4-4"></path>
+                  </svg>
+                }
+                @case ('check') {
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                  </svg>
+                }
+                @case ('headphones') {
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
+                    <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
+                  </svg>
+                }
+              }
+            </div>
+            <h3 class="guarantee-card__title">{{ guarantee.title }}</h3>
+            <p class="guarantee-card__description">{{ guarantee.description }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+
+  <!-- Process Section -->
+  <div class="about-process section">
+    <div class="container">
+      <div class="section-header fade-in" #animatedSection>
+        <span class="section-label">// PROCESSUS</span>
+        <h2>Comment ça <span class="text-gradient">marche</span></h2>
+        <p class="section-subtitle">Un processus simple et transparent, de A à Z.</p>
+      </div>
+
+      <div class="process-timeline">
+        @for (step of process; track step.number; let i = $index) {
+          <div class="process-step fade-in" [class]="'stagger-' + (i + 1)" #animatedSection>
+            <div class="process-step__number">{{ step.number }}</div>
+            <div class="process-step__content">
+              <h3>{{ step.title }}</h3>
+              <p>{{ step.description }}</p>
             </div>
           </div>
         }
@@ -150,11 +119,11 @@
     <div class="container">
       <div class="skills-content" #animatedSection>
         <div class="skills-text fade-in">
-          <span class="section-label">// COMPÉTENCES</span>
-          <h2>Stack <span class="text-gradient">Technique</span></h2>
+          <span class="section-label">// TECHNOLOGIES</span>
+          <h2>Stack <span class="text-gradient">Moderne</span></h2>
           <p>
-            Technologies et outils que j'utilise au quotidien pour créer
-            des applications web modernes et performantes.
+            Des technologies performantes et éprouvées pour des applications
+            rapides, maintenables et évolutives.
           </p>
         </div>
         <div class="skills-list fade-in">
@@ -168,10 +137,14 @@
   <div class="about-cta section">
     <div class="container">
       <div class="cta-content fade-in" #animatedSection>
-        <h2>Envie de <span class="text-gradient">collaborer</span> ?</h2>
-        <p>Je suis toujours ouvert à de nouveaux projets et défis.</p>
-        <a routerLink="/contact" class="btn btn--primary">
-          Me contacter
+        <span class="section-label">// PRÊT À DÉMARRER ?</span>
+        <h2>Discutons de votre <span class="text-gradient">projet</span></h2>
+        <p>
+          Premier appel gratuit et sans engagement.<br>
+          On échange sur vos besoins et je vous propose une solution adaptée.
+        </p>
+        <a routerLink="/contact" class="btn btn--primary btn--large">
+          Réserver un appel découverte
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <line x1="5" y1="12" x2="19" y2="12"></line>
             <polyline points="12 5 19 12 12 19"></polyline>

@@ -3,12 +3,13 @@ import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { Hero } from '../../components/shared/hero/hero';
 import { SkillsList } from '../../components/shared/skills-list/skills-list';
+import { RevenueSimulator } from '../../components/shared/revenue-simulator/revenue-simulator';
 import { ScrollService } from '../../services/scroll';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, RouterLink, Hero, SkillsList],
+  imports: [CommonModule, RouterLink, Hero, SkillsList, RevenueSimulator],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
@@ -31,14 +32,6 @@ export class Home implements AfterViewInit {
       video: '/videos/aev-multiservices.mp4',
       description: 'Application desktop cross-platform pour la gestion de devis et le suivi de chantiers. Interface intuitive et performante.',
       tech: ['Angular', 'Tauri', 'Rust']
-    },
-    {
-      id: 3,
-      title: 'Romain Deschamps',
-      category: 'PWA Performance',
-      video: '/videos/romain-deschamps.mp4',
-      description: 'SPA ultra-optimisée avec score Lighthouse 100%. PWA installable avec mode hors-ligne pour présentation terrain.',
-      tech: ['Angular', 'PWA', 'Service Workers']
     }
   ];
 

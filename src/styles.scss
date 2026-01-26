@@ -91,10 +91,14 @@ body {
 
 /* Video Performance Optimization */
 video {
-  will-change: transform;
-  transform: translateZ(0);
+  will-change: transform, opacity;
+  transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
+  perspective: 1000px;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  contain: paint;
 }
 
 /* Typography */

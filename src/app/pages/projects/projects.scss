@@ -197,6 +197,9 @@ $darker-bg: #050508;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--spacing-md);
 
+  // Optimize scroll performance
+  contain: layout style;
+
   @media (max-width: 1100px) {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -204,12 +207,23 @@ $darker-bg: #050508;
   @media (max-width: 600px) {
     grid-template-columns: 1fr;
   }
+
+  // Video optimization for smooth scroll
+  video {
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    contain: paint;
+    image-rendering: optimizeSpeed;
+  }
 }
 
 .project-item {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.6s ease, transform 0.6s ease;
+  contain: layout style paint;
 
   &.visible {
     opacity: 1;

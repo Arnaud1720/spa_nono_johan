@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 
 interface ContactForm {
   name: string;
-  email: string;
   subject: string;
   message: string;
 }
@@ -19,7 +18,6 @@ interface ContactForm {
 export class Contact {
   formData: ContactForm = {
     name: '',
-    email: '',
     subject: '',
     message: ''
   };
@@ -65,7 +63,7 @@ export class Contact {
     this.isSubmitted.set(true);
 
     // Reset form
-    this.formData = { name: '', email: '', subject: '', message: '' };
+    this.formData = { name: '', subject: '', message: '' };
   }
 
   resetForm(): void {

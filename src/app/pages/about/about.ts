@@ -14,49 +14,72 @@ import { SkillsList } from '../../components/shared/skills-list/skills-list';
 export class About implements AfterViewInit {
   @ViewChildren('animatedSection') animatedSections!: QueryList<ElementRef>;
 
-  timeline = [
+  guarantees = [
     {
-      year: '2024',
-      title: 'SPA Desktop avec Tauri',
-      description: 'Création de SPAs encapsulées en applications desktop cross-platform performantes.'
+      icon: 'rocket',
+      title: 'Livraison Rapide',
+      description: 'Votre projet livré en 2 à 4 semaines, sans compromis sur la qualité.'
     },
     {
-      year: '2023',
-      title: 'Spécialisation Animations SPA',
-      description: 'Maîtrise de GSAP et Three.js pour des Single Page Applications immersives.'
+      icon: 'shield',
+      title: 'Performance Garantie',
+      description: 'Score Lighthouse 100% ou on optimise gratuitement jusqu\'à l\'atteindre.'
     },
     {
-      year: '2022',
-      title: 'Premières SPA clients',
-      description: 'Livraison de SPAs sur-mesure : sites vitrines, PWAs, applications métier.'
+      icon: 'check',
+      title: 'Zéro Surprise',
+      description: 'Devis détaillé et fixe. Pas de frais cachés, pas de mauvaises surprises.'
     },
     {
-      year: '2020',
-      title: 'Découverte Angular & SPA',
-      description: 'Apprentissage du framework Angular et de l\'architecture Single Page Application.'
+      icon: 'headphones',
+      title: 'Support Inclus',
+      description: '30 jours de support et corrections inclus après la livraison.'
     }
   ];
 
-  values = [
+  metrics = [
     {
-      icon: 'code',
-      title: 'Code Propre',
-      description: 'Architecture modulaire, bonnes pratiques, code maintenable et documenté.'
+      value: '100%',
+      label: 'Lighthouse Score',
+      description: 'Performance maximale garantie'
     },
     {
-      icon: 'zap',
-      title: 'Performance',
-      description: 'Optimisation poussée, Lighthouse 100%, temps de chargement minimal.'
+      value: '<24h',
+      label: 'Temps de réponse',
+      description: 'Réactivité assurée'
     },
     {
-      icon: 'heart',
-      title: 'Passion',
-      description: 'Chaque projet est une opportunité d\'apprendre et de créer quelque chose d\'unique.'
+      value: '2-4',
+      label: 'Semaines de livraison',
+      description: 'Délais courts et tenus'
     },
     {
-      icon: 'users',
-      title: 'Collaboration',
-      description: 'Communication claire, feedback régulier, implication du client à chaque étape.'
+      value: '0€',
+      label: 'Frais cachés',
+      description: 'Prix transparent et fixe'
+    }
+  ];
+
+  process = [
+    {
+      number: '01',
+      title: 'Appel Découverte',
+      description: 'On échange sur votre projet, vos objectifs et vos contraintes. Gratuit, sans engagement.'
+    },
+    {
+      number: '02',
+      title: 'Proposition & Devis',
+      description: 'Vous recevez une proposition détaillée avec maquettes, planning et prix fixe.'
+    },
+    {
+      number: '03',
+      title: 'Développement',
+      description: 'Création de votre SPA avec points d\'étape réguliers pour valider l\'avancement.'
+    },
+    {
+      number: '04',
+      title: 'Livraison & Support',
+      description: 'Déploiement de votre projet + 30 jours de support et corrections inclus.'
     }
   ];
 
