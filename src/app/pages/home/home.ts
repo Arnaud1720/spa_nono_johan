@@ -3,13 +3,12 @@ import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { Hero } from '../../components/shared/hero/hero';
 import { SkillsList } from '../../components/shared/skills-list/skills-list';
-import { RevenueSimulator } from '../../components/shared/revenue-simulator/revenue-simulator';
 import { ScrollService } from '../../services/scroll';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, RouterLink, Hero, SkillsList, RevenueSimulator],
+  imports: [CommonModule, RouterLink, Hero, SkillsList],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })

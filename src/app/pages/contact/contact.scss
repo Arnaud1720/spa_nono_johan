@@ -526,3 +526,85 @@ $darker-bg: #050508;
     box-shadow: 0 0 30px 10px rgba($neon-green, 0.2);
   }
 }
+
+// ============================================
+// MOBILE PERFORMANCE OPTIMIZATIONS
+// ============================================
+@media (max-width: 768px) {
+  // Simplify hero
+  .contact-hero {
+    &::before {
+      opacity: 0.5;
+    }
+
+    &::after {
+      height: 1px;
+    }
+
+    &__grid {
+      background-size: 100% 100%, 40px 40px, 40px 40px;
+    }
+  }
+
+  // Simplify info card hover
+  .info-card {
+    &:hover {
+      transform: translateX(4px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  // Simplify social links
+  .social-link {
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 15px rgba($neon-magenta, 0.3);
+    }
+  }
+
+  // Simplify terminal
+  .contact-terminal {
+    box-shadow: 0 0 20px rgba($neon-green, 0.05);
+  }
+
+  // Simplify form
+  .contact-form-wrapper {
+    padding: var(--spacing-md);
+    box-shadow: none;
+  }
+
+  .form-input {
+    &:focus {
+      box-shadow: 0 0 0 2px $neon-cyan;
+    }
+  }
+
+  .form-submit:not(:disabled):hover {
+    box-shadow: 0 0 15px rgba($neon-cyan, 0.3);
+  }
+
+  // Limit success animation
+  .form-success .success-icon {
+    animation-iteration-count: 3;
+  }
+}
+
+@media (max-width: 500px) {
+  .contact-form-wrapper {
+    padding: var(--spacing-sm);
+  }
+
+  .info-card {
+    padding: var(--spacing-sm);
+
+    &__icon {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  .social-link {
+    width: 44px;
+    height: 44px;
+  }
+}

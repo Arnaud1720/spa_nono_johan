@@ -447,3 +447,66 @@ $darker-bg: #050508;
     transform: translateX(5px);
   }
 }
+
+// ============================================
+// MOBILE PERFORMANCE OPTIMIZATIONS
+// ============================================
+@media (max-width: 768px) {
+  // Simplify process step effects
+  .process-timeline::before {
+    box-shadow: 0 0 5px $neon-cyan;
+    opacity: 0.4;
+  }
+
+  .process-step {
+    &::before,
+    &::after {
+      display: none;
+    }
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba($neon-cyan, 0.1);
+    }
+
+    &__number {
+      text-shadow: 0 0 10px rgba($neon-cyan, 0.3);
+    }
+  }
+
+  // Simplify guarantee cards
+  .guarantee-card {
+    &:hover {
+      transform: translateY(-3px);
+
+      .guarantee-card__icon {
+        box-shadow: 0 0 15px rgba($neon-green, 0.2);
+      }
+    }
+  }
+
+  // Simplify metric cards
+  .metric-card {
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+
+  // Reduce CTA glow
+  .about-cta {
+    background: linear-gradient(135deg, $darker-bg 0%, rgba($neon-magenta, 0.08) 50%, $darker-bg 100%);
+  }
+}
+
+@media (max-width: 500px) {
+  // Stack skills content
+  .skills-content {
+    gap: var(--spacing-md);
+  }
+
+  // Smaller process numbers
+  .process-step__number {
+    font-size: 2rem;
+    min-width: 50px;
+  }
+}

@@ -225,3 +225,63 @@ $dark-bg: #0a0a0f;
     }
   }
 }
+
+// ============================================
+// MOBILE PERFORMANCE OPTIMIZATIONS
+// ============================================
+@media (max-width: 768px) {
+  .project-card {
+    // Simplify hover effects on mobile
+    &:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    // Disable animated line on mobile
+    &::after {
+      display: none;
+    }
+
+    &__media {
+      contain: layout paint;
+
+      video {
+        will-change: auto;
+        transform: none;
+        perspective: none;
+        transform-style: flat;
+        contain: layout paint;
+      }
+    }
+
+    // Simpler overlay
+    &__overlay {
+      background: linear-gradient(to bottom, transparent 60%, rgba($dark-bg, 0.85) 100%);
+    }
+
+    // Disable tech tag hover effects on mobile (no hover on touch)
+    &__tech .tech-tag:hover {
+      box-shadow: none;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .project-card {
+    &:hover {
+      transform: translateY(-4px);
+    }
+
+    &__content {
+      padding: var(--spacing-sm);
+    }
+
+    &__title {
+      font-size: 1.1rem;
+    }
+
+    &__description {
+      font-size: 0.85rem;
+    }
+  }
+}

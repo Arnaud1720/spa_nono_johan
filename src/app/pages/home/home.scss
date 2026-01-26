@@ -1100,3 +1100,68 @@ $darker-bg: #050508;
     }
   }
 }
+
+// ============================================
+// MOBILE PERFORMANCE OPTIMIZATIONS
+// ============================================
+@media (max-width: 768px) {
+  // Slow down or pause marquee on mobile
+  .marquee-track {
+    animation-duration: 30s;
+  }
+
+  // Disable gradient flow animation
+  .intro::after {
+    animation: none;
+    background: linear-gradient(90deg, transparent, $neon-cyan, $neon-magenta, transparent);
+  }
+
+  // Simplify card hover effects
+  .service-card {
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+
+  .project-showcase-card {
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    }
+  }
+
+  // Reduce glow effects
+  .stat-item__value {
+    text-shadow: 0 0 15px rgba($neon-orange, 0.3);
+  }
+
+  .process-step__number {
+    box-shadow: 0 0 10px rgba($neon-cyan, 0.2);
+  }
+
+  // Optimize video containers
+  .project-showcase-card__media video {
+    will-change: auto;
+    transform: none;
+  }
+}
+
+@media (max-width: 500px) {
+  // Pause marquee on very small screens
+  .marquee-track {
+    animation-play-state: paused;
+  }
+
+  // Simplify backgrounds
+  .intro::before,
+  .services::before,
+  .projects-preview::before,
+  .projects-preview::after {
+    opacity: 0.5;
+  }
+}

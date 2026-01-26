@@ -273,3 +273,79 @@ $darker-bg: #050508;
     }
   }
 }
+
+// ============================================
+// MOBILE PERFORMANCE OPTIMIZATIONS
+// ============================================
+@media (max-width: 768px) {
+  // Simplify hero background effects
+  .projects-hero {
+    &::before {
+      opacity: 0.5;
+    }
+
+    &::after {
+      height: 1px;
+    }
+
+    &__grid {
+      background-size: 100% 100%, 40px 40px, 40px 40px;
+    }
+  }
+
+  // Simplify filter buttons
+  .filter-btn {
+    padding: 0.6rem 1rem;
+
+    &:hover {
+      box-shadow: none;
+    }
+
+    &.active {
+      box-shadow: 0 0 15px rgba($neon-cyan, 0.3);
+    }
+  }
+
+  // Reduce background orbs
+  .projects-grid-section {
+    &::before,
+    &::after {
+      opacity: 0.3;
+    }
+  }
+
+  // Optimize project items
+  .project-item {
+    contain: layout paint;
+  }
+
+  // Optimize videos
+  .projects-grid video {
+    will-change: auto;
+    transform: none;
+    contain: layout paint;
+  }
+}
+
+@media (max-width: 500px) {
+  // Smaller filter buttons
+  .filter-btn {
+    font-size: 0.75rem;
+    padding: 0.5rem 0.75rem;
+
+    &__count {
+      font-size: 0.65rem;
+      padding: 0.15rem 0.35rem;
+    }
+  }
+
+  // Simplify grid section
+  .projects-grid-section {
+    padding: var(--spacing-md) 0;
+
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+}

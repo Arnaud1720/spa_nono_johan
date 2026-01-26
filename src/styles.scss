@@ -665,4 +665,74 @@ code, pre {
   .container {
     padding: 0 1rem;
   }
+
+  // Disable heavy animations on mobile for better performance
+  .text-gradient,
+  .text-gradient-alt {
+    animation: none;
+    background-size: 100% 100%;
+  }
+
+  // Simplify transitions
+  .fade-in,
+  .slide-in-left,
+  .slide-in-right,
+  .scale-in {
+    transition-duration: 0.4s;
+  }
+
+  // Disable stagger delays on mobile (too slow)
+  @for $i from 1 through 10 {
+    .stagger-#{$i} {
+      transition-delay: #{$i * 0.05}s;
+    }
+  }
+
+  // Simplify button effects
+  .btn {
+    &--conic,
+    &--conic-pulse {
+      &::before {
+        animation: none;
+        background: linear-gradient(135deg, var(--neon-cyan), var(--neon-magenta));
+      }
+    }
+  }
+
+  // Reduce card hover effects
+  .card:hover {
+    transform: translateY(-3px);
+  }
+
+  // Optimize videos for mobile
+  video {
+    will-change: auto;
+    transform: none;
+  }
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  .text-gradient,
+  .text-gradient-alt {
+    animation: none;
+  }
+
+  .btn--conic::before,
+  .btn--conic-pulse::before,
+  .card--conic::before {
+    animation: none;
+  }
 }
