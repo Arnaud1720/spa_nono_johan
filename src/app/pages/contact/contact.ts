@@ -30,8 +30,8 @@ export class Contact {
     {
       icon: 'mail',
       label: 'Email',
-      value: 'contact@nono.dev',
-      link: 'mailto:contact@nono.dev'
+      value: 'contact.agence.nojo@gmail.com',
+      link: 'mailto:contact.agence.nojo@gmail.com'
     },
     {
       icon: 'phone',
