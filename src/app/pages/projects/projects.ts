@@ -44,7 +44,7 @@ export class Projects implements AfterViewInit {
     },
     {
       id: 3,
-      title: 'Romain Deschamps Multiservice',
+      title: 'L\'Art de la Coiffure Sublimée',
       category: 'Multiservice',
       video: '/videos/romain-deschamps.mp4',
       description: 'SPA ultra-optimisée avec score Lighthouse 100%. PWA installable avec mode hors-ligne pour présentation commerciale.',
