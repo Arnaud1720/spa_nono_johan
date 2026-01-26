@@ -1,0 +1,75 @@
+<section class="projects-page">
+  <!-- Hero Section -->
+  <div class="projects-hero">
+    <div class="container">
+      <div class="projects-hero__content fade-in">
+        <span class="section-label">// PORTFOLIO</span>
+        <h1 class="projects-hero__title">
+          Nos <span class="text-gradient">Projets</span>
+        </h1>
+        <p class="projects-hero__description">
+          Découvrez nos réalisations : sites vitrines, applications web et solutions digitales sur-mesure.
+        </p>
+      </div>
+    </div>
+
+    <!-- Animated background grid -->
+    <div class="projects-hero__grid"></div>
+  </div>
+
+  <!-- Filters -->
+  <div class="projects-filters">
+    <div class="container">
+      <div class="filters-wrapper">
+        @for (filter of filters; track filter.key) {
+          <button
+            class="filter-btn"
+            [class.active]="selectedFilter === filter.key"
+            (click)="setFilter(filter.key)"
+          >
+            <span class="filter-btn__text">{{ filter.label }}</span>
+            <span class="filter-btn__count">
+              {{ getFilterCount(filter.key) }}
+            </span>
+          </button>
+        }
+      </div>
+    </div>
+  </div>
+
+  <!-- Projects Grid -->
+  <div class="projects-grid-section">
+    <div class="container">
+      <div class="projects-grid">
+        @for (project of filteredProjects; track project.id; let i = $index) {
+          <div class="project-item fade-in" #animatedItem>
+            <app-project-card [project]="project"></app-project-card>
+          </div>
+        }
+      </div>
+
+      @if (filteredProjects.length === 0) {
+        <div class="no-projects">
+          <p>Aucun projet trouvé pour ce filtre.</p>
+        </div>
+      }
+    </div>
+  </div>
+
+  <!-- CTA Section -->
+  <div class="projects-cta">
+    <div class="container">
+      <div class="cta-content fade-in">
+        <h2>Un projet en tête ?</h2>
+        <p>Discutons de votre vision et créons ensemble quelque chose d'unique.</p>
+        <a routerLink="/contact" class="btn btn--primary">
+          <span>Démarrer un projet</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

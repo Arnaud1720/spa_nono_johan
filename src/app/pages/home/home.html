@@ -1,0 +1,221 @@
+<!-- Hero Section -->
+<app-hero></app-hero>
+
+<!-- Marquee Text Band -->
+<div class="marquee-band">
+  <div class="marquee-track">
+    <span class="marquee-text">ANGULAR</span>
+    <span class="marquee-separator">✦</span>
+    <span class="marquee-text">TYPESCRIPT</span>
+    <span class="marquee-separator">✦</span>
+    <span class="marquee-text">GSAP</span>
+    <span class="marquee-separator">✦</span>
+    <span class="marquee-text">THREE.JS</span>
+    <span class="marquee-separator">✦</span>
+    <span class="marquee-text">TAURI</span>
+    <span class="marquee-separator">✦</span>
+    <span class="marquee-text">SCSS</span>
+    <span class="marquee-separator">✦</span>
+    <span class="marquee-text">ANIMATIONS</span>
+    <span class="marquee-separator">✦</span>
+    <span class="marquee-text">ANGULAR</span>
+    <span class="marquee-separator">✦</span>
+    <span class="marquee-text">TYPESCRIPT</span>
+    <span class="marquee-separator">✦</span>
+    <span class="marquee-text">GSAP</span>
+    <span class="marquee-separator">✦</span>
+    <span class="marquee-text">THREE.JS</span>
+    <span class="marquee-separator">✦</span>
+    <span class="marquee-text">TAURI</span>
+    <span class="marquee-separator">✦</span>
+    <span class="marquee-text">SCSS</span>
+    <span class="marquee-separator">✦</span>
+    <span class="marquee-text">ANIMATIONS</span>
+    <span class="marquee-separator">✦</span>
+  </div>
+</div>
+
+<!-- Introduction Section -->
+<section class="section intro" #animatedSection>
+  <div class="container">
+    <div class="intro__content">
+      <div class="intro__left fade-in">
+        <span class="section-number">01</span>
+        <h2 class="intro__title">
+          <span class="text-reveal">Nous créons des</span>
+          <span class="text-reveal"><em class="text-gradient">expériences digitales</em></span>
+          <span class="text-reveal">qui marquent les esprits</span>
+        </h2>
+      </div>
+      <div class="intro__right fade-in stagger-2">
+        <p class="intro__text">
+          Plus qu'un simple développeur, nous sommes des <strong>artisans du web</strong>.
+          Chaque ligne de code est pensée pour créer une expérience utilisateur fluide,
+          immersive et mémorable.
+        </p>
+        <p class="intro__text">
+          Notre approche combine <strong>design créatif</strong>, <strong>performance technique</strong>
+          et <strong>attention aux détails</strong> pour transformer vos idées en réalité digitale.
+        </p>
+        <div class="intro__cta">
+          <a routerLink="/a-propos" class="link-arrow">
+            <span>En savoir plus sur nous</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section class="section services" #animatedSection>
+  <div class="container">
+    <div class="section__header fade-in">
+      <span class="section-number">02</span>
+      <span class="section__label">Nos Services</span>
+      <h2 class="section__title">Ce que nous <span class="text-gradient">créons</span></h2>
+      <p class="section__description">
+        Des maquettes SPA modernes et performantes, conçues pour impressionner.
+      </p>
+    </div>
+
+    <div class="services__grid">
+      <div class="service-card fade-in stagger-1" #animatedSection>
+        <div class="service-card__number">01</div>
+        <div class="service-card__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="3" y1="9" x2="21" y2="9"></line>
+            <line x1="9" y1="21" x2="9" y2="9"></line>
+          </svg>
+        </div>
+        <h3 class="service-card__title">Single Page Applications</h3>
+        <p class="service-card__description">
+          Applications web ultra-rapides avec navigation instantanée,
+          routing dynamique et state management optimisé.
+        </p>
+        <ul class="service-card__features">
+          <li>Navigation fluide sans rechargement</li>
+          <li>Performance optimale</li>
+          <li>SEO friendly avec SSR</li>
+        </ul>
+      </div>
+
+      <div class="service-card fade-in stagger-2" #animatedSection>
+        <div class="service-card__number">02</div>
+        <div class="service-card__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+          </svg>
+        </div>
+        <h3 class="service-card__title">Design UI/UX Premium</h3>
+        <p class="service-card__description">
+          Interfaces élégantes et intuitives qui captivent vos utilisateurs
+          dès le premier regard.
+        </p>
+        <ul class="service-card__features">
+          <li>Design sur-mesure</li>
+          <li>Responsive & mobile-first</li>
+          <li>Accessibilité WCAG</li>
+        </ul>
+      </div>
+
+      <div class="service-card fade-in stagger-3" #animatedSection>
+        <div class="service-card__number">03</div>
+        <div class="service-card__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+          </svg>
+        </div>
+        <h3 class="service-card__title">Animations & Interactions</h3>
+        <p class="service-card__description">
+          Micro-interactions, transitions fluides et animations
+          qui donnent vie à votre projet.
+        </p>
+        <ul class="service-card__features">
+          <li>Animations GSAP avancées</li>
+          <li>Effets 3D avec Three.js</li>
+          <li>Scroll-triggered animations</li>
+        </ul>
+      </div>
+
+      <div class="service-card fade-in stagger-4" #animatedSection>
+        <div class="service-card__number">04</div>
+        <div class="service-card__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+            <line x1="8" y1="21" x2="16" y2="21"></line>
+            <line x1="12" y1="17" x2="12" y2="21"></line>
+          </svg>
+        </div>
+        <h3 class="service-card__title">Applications Desktop</h3>
+        <p class="service-card__description">
+          Transformez vos SPA en applications desktop natives
+          avec Tauri et Rust.
+        </p>
+        <ul class="service-card__features">
+          <li>Cross-platform (Win/Mac/Linux)</li>
+          <li>Léger et performant</li>
+          <li>Accès aux APIs système</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Projects Section -->
+<section class="section projects-preview" #animatedSection>
+  <div class="container">
+    <div class="section__header fade-in">
+      <span class="section-number">03</span>
+      <span class="section__label">Portfolio</span>
+      <h2 class="section__title">Projets <span class="text-gradient">récents</span></h2>
+      <p class="section__description">
+        Voici une petite liste des projets que nous avons effectués jusqu'à maintenant.
+        Des vidéos de démonstration de nos maquettes sont disponibles dans notre dossier de présentation.
+      </p>
+    </div>
+
+    <div class="projects-showcase">
+      @for (project of featuredProjects; track project.id; let i = $index) {
+        <div class="project-showcase-card fade-in" [class]="'stagger-' + (i + 1)" #animatedSection>
+          <div class="project-showcase-card__media">
+            <video [src]="project.video" autoplay muted loop playsinline></video>
+          </div>
+          <div class="project-showcase-card__content">
+            <h3 class="project-showcase-card__title">{{ project.title }}</h3>
+            <p class="project-showcase-card__description">{{ project.description }}</p>
+            <div class="project-showcase-card__tech">
+              @for (tech of project.tech; track tech) {
+                <span class="tech-badge">{{ tech }}</span>
+              }
+            </div>
+            <a routerLink="/projets" class="project-showcase-card__link">
+              <span>Voir le projet</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+      }
+    </div>
+
+    <div class="projects-preview__cta fade-in">
+      <a routerLink="/projets" class="btn btn--primary">
+        Voir tous les projets
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+

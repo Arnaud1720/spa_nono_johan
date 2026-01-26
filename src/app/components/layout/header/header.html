@@ -1,0 +1,60 @@
+<header class="header" [class.scrolled]="isScrolled()">
+  <div class="header__container">
+    <!-- Logo -->
+    <a routerLink="/" class="header__logo" (click)="closeMenu()">
+      <span class="logo-text">NONO<span class="logo-accent">.</span></span>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="header__nav">
+      @for (link of navLinks; track link.path) {
+        <a
+          [routerLink]="link.path"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: link.exact }"
+          class="nav-link"
+        >
+          <span class="nav-link__text">{{ link.label }}</span>
+          <span class="nav-link__indicator"></span>
+        </a>
+      }
+    </nav>
+
+    <!-- CTA Button -->
+    <a routerLink="/contact" class="header__cta btn btn--primary">
+      Démarrer un projet
+    </a>
+
+    <!-- Mobile Menu Toggle -->
+    <button
+      class="header__menu-toggle"
+      [class.active]="isMenuOpen()"
+      (click)="toggleMenu()"
+      aria-label="Toggle menu"
+    >
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+  </div>
+
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav" [class.open]="isMenuOpen()">
+    <nav class="mobile-nav__links">
+      @for (link of navLinks; track link.path) {
+        <a
+          [routerLink]="link.path"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: link.exact }"
+          class="mobile-nav__link"
+          (click)="closeMenu()"
+        >
+          {{ link.label }}
+        </a>
+      }
+    </nav>
+    <a routerLink="/contact" class="btn btn--accent" (click)="closeMenu()">
+      Démarrer un projet
+    </a>
+  </div>
+</header>

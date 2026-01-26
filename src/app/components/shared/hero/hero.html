@@ -1,0 +1,76 @@
+<section class="hero">
+  <!-- Canvas Container for Digital Effects -->
+  <div class="hero__canvas" #canvasContainer>
+    <canvas #matrixCanvas class="canvas-layer matrix-layer"></canvas>
+    <canvas #particleCanvas class="canvas-layer particle-layer"></canvas>
+  </div>
+
+  <!-- Scanlines Overlay -->
+  <div class="hero__scanlines"></div>
+
+  <!-- Content Overlay -->
+  <div class="hero__content">
+    <div class="hero__text">
+      <!-- Terminal-style intro -->
+      <div class="hero__terminal">
+        <span class="terminal-prompt">$</span>
+        <span class="terminal-command">./init_portfolio.sh</span>
+        <span class="terminal-cursor">_</span>
+      </div>
+
+      <h1 class="hero__title">
+        <span class="hero__title-line">Créateur de</span>
+        <span class="hero__title-accent" data-text="Maquettes SPA">Maquettes SPA</span>
+        <span class="hero__title-line">sur-mesure</span>
+      </h1>
+
+      <p class="hero__subtitle">
+        <span class="code-bracket">&lt;</span>
+        Design moderne
+        <span class="code-separator">/</span>
+        Animations fluides
+        <span class="code-separator">/</span>
+        Expériences uniques
+        <span class="code-bracket">&gt;</span>
+      </p>
+
+      <!-- Stats inline -->
+      <div class="hero__stats">
+        <div class="stat">
+          <span class="stat__value">50+</span>
+          <span class="stat__label">Projets</span>
+        </div>
+        <div class="stat">
+          <span class="stat__value">100%</span>
+          <span class="stat__label">Passion</span>
+        </div>
+        <div class="stat">
+          <span class="stat__value">24/7</span>
+          <span class="stat__label">Code</span>
+        </div>
+      </div>
+
+      <div class="hero__cta">
+        <a routerLink="/projets" class="btn btn--neon btn--primary">
+          <span class="btn__text">Voir les projets</span>
+          <span class="btn__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </span>
+        </a>
+        <a routerLink="/contact" class="btn btn--neon btn--secondary">
+          <span class="btn__text">Contact</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Corner Decorations -->
+  <div class="hero__corner hero__corner--tl"></div>
+  <div class="hero__corner hero__corner--tr"></div>
+  <div class="hero__corner hero__corner--bl"></div>
+  <div class="hero__corner hero__corner--br"></div>
+</section>

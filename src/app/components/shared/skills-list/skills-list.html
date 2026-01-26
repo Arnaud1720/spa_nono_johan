@@ -1,0 +1,26 @@
+<div class="skills-list">
+  <!-- Progress Bars -->
+  <div class="skills-list__bars">
+    @for (skill of skills; track skill.name) {
+      <div class="skill-bar">
+        <div class="skill-bar__header">
+          <span class="skill-bar__name">{{ skill.name }}</span>
+          <span class="skill-bar__percentage">{{ skill.level }}%</span>
+        </div>
+        <div class="skill-bar__track">
+          <div
+            class="skill-bar__fill"
+            [style.width.%]="skill.level"
+          ></div>
+        </div>
+      </div>
+    }
+  </div>
+
+  <!-- Technology Tags -->
+  <div class="skills-list__tags">
+    @for (tech of technologies; track tech) {
+      <span class="tech-tag">{{ tech }}</span>
+    }
+  </div>
+</div>
