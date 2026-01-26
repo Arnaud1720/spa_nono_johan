@@ -244,6 +244,30 @@ code, pre {
   }
 }
 
+/* Parent .visible triggers children animation */
+.section.visible,
+.visible {
+  .fade-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .slide-in-left {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .slide-in-right {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .scale-in {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 /* Stagger Animation Delays */
 @for $i from 1 through 10 {
   .stagger-#{$i} {

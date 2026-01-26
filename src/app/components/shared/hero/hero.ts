@@ -328,6 +328,18 @@ export class Hero implements AfterViewInit, OnDestroy {
   }
 
   private initTextAnimations(): void {
+    // Animate terminal intro
+    const terminal = document.querySelector('.hero__terminal');
+    if (terminal) {
+      gsap.from(terminal, {
+        y: 20,
+        opacity: 0,
+        duration: 0.6,
+        delay: 0.1,
+        ease: 'power3.out'
+      });
+    }
+
     gsap.from('.hero__title', {
       y: 100,
       opacity: 0,
@@ -352,21 +364,41 @@ export class Hero implements AfterViewInit, OnDestroy {
       ease: 'power3.out'
     });
 
-    gsap.from('.hero__scroll-indicator', {
-      y: 20,
-      opacity: 0,
-      duration: 0.6,
-      delay: 1.2,
-      ease: 'power3.out'
-    });
+    // Animate stats
+    const stats = document.querySelectorAll('.hero__stats .stat');
+    if (stats.length > 0) {
+      gsap.from(stats, {
+        y: 20,
+        opacity: 0,
+        duration: 0.5,
+        stagger: 0.1,
+        delay: 1,
+        ease: 'power3.out'
+      });
+    }
 
-    // Terminal typing effect for subtitle
-    gsap.from('.hero__terminal-line', {
-      width: 0,
-      duration: 0.5,
-      stagger: 0.2,
-      delay: 1.5,
-      ease: 'none'
-    });
+    // Only animate scroll indicator if it exists
+    const scrollIndicator = document.querySelector('.hero__scroll-indicator');
+    if (scrollIndicator) {
+      gsap.from(scrollIndicator, {
+        y: 20,
+        opacity: 0,
+        duration: 0.6,
+        delay: 1.2,
+        ease: 'power3.out'
+      });
+    }
+
+    // Terminal typing effect only if elements exist
+    const terminalLines = document.querySelectorAll('.hero__terminal-line');
+    if (terminalLines.length > 0) {
+      gsap.from(terminalLines, {
+        width: 0,
+        duration: 0.5,
+        stagger: 0.2,
+        delay: 1.5,
+        ease: 'none'
+      });
+    }
   }
 }

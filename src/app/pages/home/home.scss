@@ -11,7 +11,7 @@ $darker-bg: #050508;
 // ============================================
 .marquee-band {
   background: linear-gradient(90deg, $neon-cyan, $neon-magenta);
-  padding: 1rem 0;
+  padding: 0.6rem 0;
   overflow: hidden;
   position: relative;
 
@@ -20,7 +20,7 @@ $darker-bg: #050508;
     content: '';
     position: absolute;
     top: 0;
-    width: 100px;
+    width: 60px;
     height: 100%;
     z-index: 2;
   }
@@ -34,22 +34,39 @@ $darker-bg: #050508;
     right: 0;
     background: linear-gradient(-90deg, $dark-bg, transparent);
   }
+
+  @media (max-width: 768px) {
+    padding: 0.5rem 0;
+
+    &::before,
+    &::after {
+      width: 30px;
+    }
+  }
 }
 
 .marquee-track {
   display: flex;
-  gap: 2rem;
+  gap: 1.25rem;
   animation: marquee 20s linear infinite;
   white-space: nowrap;
+
+  @media (max-width: 768px) {
+    gap: 1rem;
+  }
 }
 
 .marquee-text {
   font-family: var(--font-display);
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: $dark-bg;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
 }
 
 .marquee-separator {
@@ -1105,11 +1122,6 @@ $darker-bg: #050508;
 // MOBILE PERFORMANCE OPTIMIZATIONS
 // ============================================
 @media (max-width: 768px) {
-  // Slow down or pause marquee on mobile
-  .marquee-track {
-    animation-duration: 30s;
-  }
-
   // Disable gradient flow animation
   .intro::after {
     animation: none;
@@ -1152,11 +1164,6 @@ $darker-bg: #050508;
 }
 
 @media (max-width: 500px) {
-  // Pause marquee on very small screens
-  .marquee-track {
-    animation-play-state: paused;
-  }
-
   // Simplify backgrounds
   .intro::before,
   .services::before,

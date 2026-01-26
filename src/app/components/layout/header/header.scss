@@ -35,20 +35,41 @@
     font-family: var(--font-display);
     font-size: 1.75rem;
     font-weight: 700;
-    color: #ffffff;
     text-decoration: none;
     transition: all var(--transition-fast);
     position: relative;
     z-index: 1001;
 
-    &:hover {
-      transform: scale(1.05);
+    // Logo text - always visible white with glow
+    .logo-text {
       color: #ffffff;
-      text-shadow: 0 0 20px rgba(0, 245, 255, 0.5);
+      text-shadow:
+        0 0 10px rgba(255, 255, 255, 0.5),
+        0 0 20px rgba(0, 245, 255, 0.3);
+      letter-spacing: 0.05em;
     }
 
     .logo-accent {
       color: var(--neon-cyan);
+      text-shadow:
+        0 0 10px rgba(0, 245, 255, 0.8),
+        0 0 20px rgba(0, 245, 255, 0.5);
+    }
+
+    &:hover {
+      transform: scale(1.05);
+
+      .logo-text {
+        text-shadow:
+          0 0 15px rgba(255, 255, 255, 0.8),
+          0 0 30px rgba(0, 245, 255, 0.6);
+      }
+
+      .logo-accent {
+        text-shadow:
+          0 0 15px rgba(0, 245, 255, 1),
+          0 0 30px rgba(0, 245, 255, 0.8);
+      }
     }
   }
 
@@ -130,10 +151,10 @@
   position: relative;
   font-size: 0.9rem;
   font-weight: 500;
-  color: var(--color-text);
+  color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
-  padding: var(--spacing-xs) 0;
-  transition: color var(--transition-fast);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  transition: all var(--transition-fast);
 
   &__text {
     position: relative;
@@ -143,16 +164,27 @@
   &__indicator {
     position: absolute;
     bottom: 0;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     width: 0;
     height: 2px;
-    background-color: var(--color-accent);
+    background: linear-gradient(90deg, var(--neon-cyan), var(--neon-magenta));
     transition: width var(--transition-normal);
+    box-shadow: 0 0 10px rgba(0, 245, 255, 0.5);
   }
 
-  &:hover,
+  &:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(0, 245, 255, 0.4);
+
+    .nav-link__indicator {
+      width: 80%;
+    }
+  }
+
   &.active {
-    color: var(--color-accent);
+    color: var(--neon-cyan);
+    text-shadow: 0 0 15px rgba(0, 245, 255, 0.5);
 
     .nav-link__indicator {
       width: 100%;
@@ -207,11 +239,12 @@
     font-family: var(--font-display);
     font-size: 1.75rem;
     font-weight: 600;
-    color: #ffffff;
+    color: rgba(255, 255, 255, 0.9);
     text-decoration: none;
     transition: all var(--transition-fast);
     position: relative;
-    padding: var(--spacing-xs) var(--spacing-md);
+    padding: var(--spacing-sm) var(--spacing-md);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 
     // Underline effect
     &::after {
@@ -220,16 +253,16 @@
       bottom: 0;
       left: 50%;
       width: 0;
-      height: 2px;
+      height: 3px;
       background: linear-gradient(90deg, var(--neon-cyan), var(--neon-magenta));
       transition: all var(--transition-normal);
       transform: translateX(-50%);
+      box-shadow: 0 0 15px rgba(0, 245, 255, 0.5);
     }
 
-    &:hover,
-    &.active {
-      color: var(--neon-cyan);
-      text-shadow: 0 0 20px rgba(0, 245, 255, 0.5);
+    &:hover {
+      color: #ffffff;
+      text-shadow: 0 0 20px rgba(0, 245, 255, 0.6);
 
       &::after {
         width: 100%;
@@ -237,8 +270,15 @@
     }
 
     &.active {
-      color: var(--neon-magenta);
-      text-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
+      color: var(--neon-cyan);
+      text-shadow:
+        0 0 15px rgba(0, 245, 255, 0.7),
+        0 0 30px rgba(0, 245, 255, 0.4);
+
+      &::after {
+        width: 100%;
+        background: linear-gradient(90deg, var(--neon-cyan), var(--neon-cyan));
+      }
     }
   }
 
