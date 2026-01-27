@@ -4,10 +4,12 @@ $neon-green: #00ff41;
 $neon-orange: #ff6b35;
 $dark-bg: #0a0a0f;
 $darker-bg: #050508;
+$dark-bg-transparent: rgba(10, 10, 15, 0.85);
+$darker-bg-transparent: rgba(5, 5, 8, 0.9);
 
 .projects-page {
   min-height: 100vh;
-  background: $dark-bg;
+  background: transparent;
 }
 
 // Hero Section
@@ -15,7 +17,7 @@ $darker-bg: #050508;
   position: relative;
   padding: calc(var(--spacing-xl) + 80px) 0 var(--spacing-xl);
   overflow: hidden;
-  background: linear-gradient(180deg, $dark-bg 0%, $darker-bg 100%);
+  background: linear-gradient(180deg, $dark-bg-transparent 0%, $darker-bg-transparent 100%);
 
   // Gradient orbs
   &::before {
@@ -241,7 +243,7 @@ $darker-bg: #050508;
 // CTA Section
 .projects-cta {
   padding: var(--spacing-xl) 0;
-  background: linear-gradient(135deg, $darker-bg 0%, rgba($neon-magenta, 0.1) 50%, $darker-bg 100%);
+  background: linear-gradient(135deg, $darker-bg-transparent 0%, rgba($neon-magenta, 0.08) 50%, $darker-bg-transparent 100%);
   border-top: 1px solid rgba($neon-magenta, 0.2);
 }
 

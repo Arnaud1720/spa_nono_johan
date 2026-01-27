@@ -4,10 +4,12 @@ $neon-green: #00ff41;
 $neon-orange: #ff6b35;
 $dark-bg: #0a0a0f;
 $darker-bg: #050508;
+$dark-bg-transparent: rgba(10, 10, 15, 0.85);
+$darker-bg-transparent: rgba(5, 5, 8, 0.9);
 
 .about-page {
   min-height: 100vh;
-  background: $dark-bg;
+  background: transparent;
 }
 
 .section-label {
@@ -89,7 +91,7 @@ $darker-bg: #050508;
 
 // Metrics Section
 .about-metrics {
-  background: $darker-bg;
+  background: $darker-bg-transparent;
   padding: var(--spacing-lg) 0;
 }
 
@@ -152,7 +154,7 @@ $darker-bg: #050508;
 
 // Guarantees Section
 .about-guarantees {
-  background: $dark-bg;
+  background: $dark-bg-transparent;
 }
 
 .guarantees-grid {
@@ -216,7 +218,7 @@ $darker-bg: #050508;
 
 // Process Section
 .about-process {
-  background: $darker-bg;
+  background: $darker-bg-transparent;
 }
 
 .process-timeline {
@@ -374,7 +376,7 @@ $darker-bg: #050508;
 
 // Skills Section
 .about-skills {
-  background: $dark-bg;
+  background: $dark-bg-transparent;
   padding: var(--spacing-xl) 0;
 
   .container {
@@ -408,7 +410,7 @@ $darker-bg: #050508;
 
 // CTA Section
 .about-cta {
-  background: linear-gradient(135deg, $darker-bg 0%, rgba($neon-magenta, 0.15) 50%, $darker-bg 100%);
+  background: linear-gradient(135deg, $darker-bg-transparent 0%, rgba($neon-magenta, 0.12) 50%, $darker-bg-transparent 100%);
   border-top: 1px solid rgba($neon-magenta, 0.2);
   padding: calc(var(--spacing-xl) * 1.5) 0;
 }

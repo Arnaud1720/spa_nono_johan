@@ -85,7 +85,7 @@ body {
   font-size: 1rem;
   line-height: 1.6;
   color: var(--color-text);
-  background-color: var(--color-bg-primary);
+  background-color: transparent;
   overflow-x: hidden;
 }
 
@@ -540,7 +540,7 @@ code, pre {
 /* Main Content Area */
 .main-content {
   min-height: 100vh;
-  background-color: var(--color-bg-primary);
+  background-color: transparent;
 }
 
 /* Selection Style */
