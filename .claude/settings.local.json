@@ -1,8 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "WebFetch(domain:matrys.fr)",
-      "Bash(dir \"c:\\\\PROJET\\\\SPA NONO JOHAN\\\\portfolio-spa\\\\src\\\\assets\" /s /b)"
-    ]
-  }
-}
