@@ -2,19 +2,30 @@
   <!-- Hero Section -->
   <div class="projects-hero">
     <div class="container">
-      <div class="projects-hero__content fade-in">
+      <div class="projects-hero__content">
         <span class="section-label">// PORTFOLIO</span>
         <h1 class="projects-hero__title">
-          Nos <span class="text-gradient">Projets</span>
+          Nos <span class="text-gradient">Réalisations</span>
         </h1>
         <p class="projects-hero__description">
-          Découvrez nos réalisations : sites vitrines, applications web et solutions digitales sur-mesure.
+          Découvrez nos projets : des solutions digitales qui génèrent des résultats concrets pour nos clients.
         </p>
+        <div class="projects-hero__stats">
+          <div class="stat-item">
+            <span class="stat-value">300+</span>
+            <span class="stat-label">Projets livrés</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">98%</span>
+            <span class="stat-label">Clients satisfaits</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">24h</span>
+            <span class="stat-label">Délai de réponse</span>
+          </div>
+        </div>
       </div>
     </div>
-
-    <!-- Animated background grid -->
-    <div class="projects-hero__grid"></div>
   </div>
 
   <!-- Filters -->
@@ -37,11 +48,25 @@
     </div>
   </div>
 
+  <!-- Featured Project -->
+  @if (selectedFilter === 'all' && featuredProject) {
+    <div class="featured-section">
+      <div class="container">
+        <div class="featured-header">
+          <span class="section-label">// PROJET À LA UNE</span>
+        </div>
+        <div class="featured-wrapper">
+          <app-project-card [project]="featuredProject" [featured]="true"></app-project-card>
+        </div>
+      </div>
+    </div>
+  }
+
   <!-- Projects Grid -->
   <div class="projects-grid-section">
     <div class="container">
       <div class="projects-grid">
-        @for (project of filteredProjects; track project.id; let i = $index) {
+        @for (project of displayedProjects; track project.id; let i = $index) {
           <div class="project-item fade-in" #animatedItem>
             <app-project-card [project]="project"></app-project-card>
           </div>
@@ -59,16 +84,32 @@
   <!-- CTA Section -->
   <div class="projects-cta">
     <div class="container">
-      <div class="cta-content fade-in">
-        <h2>Un projet en tête ?</h2>
-        <p>Discutons de votre vision et créons ensemble quelque chose d'unique.</p>
-        <a routerLink="/contact" class="btn btn--primary">
-          <span>Démarrer un projet</span>
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-            <polyline points="12 5 19 12 12 19"></polyline>
+      <div class="cta-content">
+        <div class="cta-badge">Devis gratuit en 24h</div>
+        <h2>Votre projet mérite le meilleur</h2>
+        <p>Rejoignez nos 300+ clients satisfaits. Discutons de votre vision et créons ensemble votre succès digital.</p>
+        <div class="cta-actions">
+          <a routerLink="/contact" class="btn btn--primary">
+            <span>Demander un devis gratuit</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+          <a href="tel:+33600000000" class="btn btn--secondary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            <span>Appeler maintenant</span>
+          </a>
+        </div>
+        <p class="cta-reassurance">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
           </svg>
-        </a>
+          Sans engagement • Réponse garantie sous 24h
+        </p>
       </div>
     </div>
   </div>

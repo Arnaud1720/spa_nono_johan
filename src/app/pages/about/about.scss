@@ -1,24 +1,20 @@
-$neon-cyan: #00f5ff;
-$neon-magenta: #ff00ff;
-$neon-green: #00ff41;
-$neon-orange: #ff6b35;
-$dark-bg: #0a0a0f;
-$darker-bg: #050508;
-$dark-bg-transparent: rgba(10, 10, 15, 0.85);
-$darker-bg-transparent: rgba(5, 5, 8, 0.9);
+/* ========================================
+   ABOUT PAGE STYLES - Clean & Professional
+   ======================================== */
 
 .about-page {
   min-height: 100vh;
-  background: transparent;
+  background: var(--color-bg-primary);
 }
 
 .section-label {
   display: inline-block;
-  font-family: var(--font-mono);
   font-size: 0.85rem;
-  color: $neon-cyan;
-  margin-bottom: var(--spacing-sm);
+  font-weight: 600;
+  color: var(--color-accent);
+  text-transform: uppercase;
   letter-spacing: 0.1em;
+  margin-bottom: var(--spacing-xs);
 }
 
 .section-header {
@@ -27,7 +23,7 @@ $darker-bg-transparent: rgba(5, 5, 8, 0.9);
 }
 
 .section-subtitle {
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--color-text-secondary);
   font-size: 1.1rem;
   max-width: 500px;
   margin: var(--spacing-sm) auto 0;
@@ -36,8 +32,8 @@ $darker-bg-transparent: rgba(5, 5, 8, 0.9);
 // Hero Section
 .about-hero {
   position: relative;
-  padding: calc(var(--spacing-xl) + 80px) 0 var(--spacing-xl);
-  overflow: hidden;
+  padding: calc(var(--spacing-2xl) + 80px) 0 var(--spacing-xl);
+  background: linear-gradient(135deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 100%);
 
   &__content {
     position: relative;
@@ -53,7 +49,7 @@ $darker-bg-transparent: rgba(5, 5, 8, 0.9);
 
   &__description {
     font-size: 1.25rem;
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--color-text-secondary);
     line-height: 1.7;
     margin-bottom: var(--spacing-lg);
   }
@@ -62,36 +58,12 @@ $darker-bg-transparent: rgba(5, 5, 8, 0.9);
     display: flex;
     gap: var(--spacing-md);
     flex-wrap: wrap;
-
-    .btn--outline {
-      background: transparent;
-      border: 1px solid rgba($neon-cyan, 0.5);
-      color: $neon-cyan;
-
-      &:hover {
-        background: rgba($neon-cyan, 0.1);
-        border-color: $neon-cyan;
-      }
-    }
-  }
-
-  &__grid {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image:
-      linear-gradient(rgba($neon-cyan, 0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba($neon-cyan, 0.03) 1px, transparent 1px);
-    background-size: 50px 50px;
-    z-index: 1;
   }
 }
 
 // Metrics Section
 .about-metrics {
-  background: $darker-bg-transparent;
+  background: var(--color-bg-secondary);
   padding: var(--spacing-lg) 0;
 }
 
@@ -112,13 +84,13 @@ $darker-bg-transparent: rgba(5, 5, 8, 0.9);
 .metric-card {
   text-align: center;
   padding: var(--spacing-lg);
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba($neon-cyan, 0.1);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   transition: all var(--transition-normal);
 
   &:hover {
-    border-color: rgba($neon-cyan, 0.3);
+    border-color: var(--color-accent);
     transform: translateY(-3px);
   }
 
@@ -127,19 +99,15 @@ $darker-bg-transparent: rgba(5, 5, 8, 0.9);
     font-family: var(--font-display);
     font-size: clamp(2.5rem, 5vw, 3.5rem);
     font-weight: 700;
-    background: linear-gradient(135deg, $neon-cyan, $neon-magenta);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--color-accent);
     line-height: 1;
     margin-bottom: var(--spacing-xs);
   }
 
   &__label {
     display: block;
-    font-family: var(--font-mono);
     font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--color-text);
     text-transform: uppercase;
     letter-spacing: 0.05em;
     margin-bottom: var(--spacing-xs);
@@ -148,13 +116,13 @@ $darker-bg-transparent: rgba(5, 5, 8, 0.9);
   &__description {
     display: block;
     font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-muted);
   }
 }
 
 // Guarantees Section
 .about-guarantees {
-  background: $dark-bg-transparent;
+  background: var(--color-bg-primary);
 }
 
 .guarantees-grid {
@@ -172,20 +140,19 @@ $darker-bg-transparent: rgba(5, 5, 8, 0.9);
 }
 
 .guarantee-card {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba($neon-green, 0.15);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   padding: var(--spacing-lg);
   text-align: center;
   transition: all var(--transition-normal);
 
   &:hover {
-    border-color: rgba($neon-green, 0.4);
+    border-color: var(--color-accent);
     transform: translateY(-5px);
 
     .guarantee-card__icon {
-      color: $neon-green;
-      box-shadow: 0 0 30px rgba($neon-green, 0.3);
+      color: var(--color-accent);
     }
   }
 
@@ -196,8 +163,8 @@ $darker-bg-transparent: rgba(5, 5, 8, 0.9);
     width: 70px;
     height: 70px;
     border-radius: 50%;
-    border: 1px solid rgba($neon-green, 0.3);
-    color: rgba($neon-green, 0.8);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-muted);
     margin-bottom: var(--spacing-md);
     transition: all var(--transition-normal);
   }
@@ -205,12 +172,12 @@ $darker-bg-transparent: rgba(5, 5, 8, 0.9);
   &__title {
     font-size: 1.1rem;
     margin-bottom: var(--spacing-xs);
-    color: #fff;
+    color: var(--color-text);
   }
 
   &__description {
     font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--color-text-secondary);
     margin-bottom: 0;
     line-height: 1.6;
   }
@@ -218,7 +185,7 @@ $darker-bg-transparent: rgba(5, 5, 8, 0.9);
 
 // Process Section
 .about-process {
-  background: $darker-bg-transparent;
+  background: var(--color-bg-secondary);
 }
 
 .process-timeline {
@@ -227,24 +194,6 @@ $darker-bg-transparent: rgba(5, 5, 8, 0.9);
   display: flex;
   flex-direction: column;
   gap: var(--spacing-md);
-  position: relative;
-
-  // Neon line connecting steps
-  &::before {
-    content: '';
-    position: absolute;
-    left: 55px;
-    top: 40px;
-    bottom: 40px;
-    width: 2px;
-    background: linear-gradient(180deg, $neon-cyan, $neon-magenta, $neon-cyan);
-    box-shadow: 0 0 10px $neon-cyan, 0 0 20px $neon-cyan, 0 0 30px $neon-magenta;
-    opacity: 0.6;
-
-    @media (max-width: 600px) {
-      display: none;
-    }
-  }
 }
 
 .process-step {
@@ -252,73 +201,17 @@ $darker-bg-transparent: rgba(5, 5, 8, 0.9);
   gap: var(--spacing-lg);
   align-items: flex-start;
   padding: var(--spacing-lg);
-  background: rgba(0, 0, 0, 0.4);
-  border: 1px solid rgba($neon-cyan, 0.2);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   transition: all var(--transition-normal);
-  position: relative;
-  overflow: hidden;
-
-  // Neon glow on border
-  &::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: var(--radius-lg);
-    padding: 1px;
-    background: linear-gradient(135deg, rgba($neon-cyan, 0.3), transparent 50%, rgba($neon-magenta, 0.3));
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    opacity: 0;
-    transition: opacity var(--transition-normal);
-  }
-
-  // Ambient glow effect
-  &::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100px;
-    height: 100px;
-    background: radial-gradient(circle, rgba($neon-cyan, 0.15) 0%, transparent 70%);
-    transform: translate(-30%, -50%);
-    pointer-events: none;
-    transition: all var(--transition-normal);
-  }
 
   &:hover {
-    border-color: rgba($neon-cyan, 0.5);
+    border-color: var(--color-accent);
     transform: translateX(10px);
-    box-shadow:
-      0 0 20px rgba($neon-cyan, 0.2),
-      0 0 40px rgba($neon-cyan, 0.1),
-      inset 0 0 20px rgba($neon-cyan, 0.05);
-
-    &::before {
-      opacity: 1;
-    }
-
-    &::after {
-      width: 150px;
-      height: 150px;
-      background: radial-gradient(circle, rgba($neon-cyan, 0.25) 0%, transparent 70%);
-    }
 
     .process-step__number {
-      text-shadow:
-        0 0 10px $neon-cyan,
-        0 0 20px $neon-cyan,
-        0 0 40px $neon-cyan,
-        0 0 60px $neon-magenta;
-      transform: scale(1.1);
-    }
-
-    .process-step__content h3 {
-      color: $neon-cyan;
-      text-shadow: 0 0 10px rgba($neon-cyan, 0.5);
+      color: var(--color-accent);
     }
   }
 
@@ -327,31 +220,21 @@ $darker-bg-transparent: rgba(5, 5, 8, 0.9);
     font-family: var(--font-display);
     font-size: 2.5rem;
     font-weight: 700;
-    color: $neon-cyan;
-    text-shadow:
-      0 0 5px $neon-cyan,
-      0 0 15px rgba($neon-cyan, 0.5),
-      0 0 30px rgba($neon-cyan, 0.3);
+    color: var(--color-text-muted);
     line-height: 1;
     transition: all var(--transition-normal);
-    position: relative;
-    z-index: 1;
     min-width: 70px;
   }
 
   &__content {
-    position: relative;
-    z-index: 1;
-
     h3 {
       font-size: 1.2rem;
       margin-bottom: var(--spacing-xs);
-      color: #fff;
-      transition: all var(--transition-normal);
+      color: var(--color-text);
     }
 
     p {
-      color: rgba(255, 255, 255, 0.6);
+      color: var(--color-text-secondary);
       font-size: 0.95rem;
       margin-bottom: 0;
       line-height: 1.6;
@@ -362,12 +245,6 @@ $darker-bg-transparent: rgba(5, 5, 8, 0.9);
     flex-direction: column;
     gap: var(--spacing-sm);
 
-    &::after {
-      top: 0;
-      left: 50%;
-      transform: translate(-50%, -30%);
-    }
-
     &:hover {
       transform: translateY(-5px);
     }
@@ -376,7 +253,7 @@ $darker-bg-transparent: rgba(5, 5, 8, 0.9);
 
 // Skills Section
 .about-skills {
-  background: $dark-bg-transparent;
+  background: var(--color-bg-primary);
   padding: var(--spacing-xl) 0;
 
   .container {
@@ -403,15 +280,15 @@ $darker-bg-transparent: rgba(5, 5, 8, 0.9);
   }
 
   p {
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--color-text-secondary);
     line-height: 1.7;
   }
 }
 
 // CTA Section
 .about-cta {
-  background: linear-gradient(135deg, $darker-bg-transparent 0%, rgba($neon-magenta, 0.12) 50%, $darker-bg-transparent 100%);
-  border-top: 1px solid rgba($neon-magenta, 0.2);
+  background: linear-gradient(135deg, var(--color-bg-secondary) 0%, var(--color-bg-tertiary) 100%);
+  border-top: 1px solid var(--color-border);
   padding: calc(var(--spacing-xl) * 1.5) 0;
 }
 
@@ -420,17 +297,13 @@ $darker-bg-transparent: rgba(5, 5, 8, 0.9);
   max-width: 650px;
   margin: 0 auto;
 
-  .section-label {
-    color: $neon-magenta;
-  }
-
   h2 {
     font-size: clamp(2rem, 4vw, 3rem);
     margin-bottom: var(--spacing-sm);
   }
 
   p {
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--color-text-secondary);
     font-size: 1.1rem;
     margin-bottom: var(--spacing-lg);
     line-height: 1.7;
@@ -447,68 +320,5 @@ $darker-bg-transparent: rgba(5, 5, 8, 0.9);
 
   .btn:hover svg {
     transform: translateX(5px);
-  }
-}
-
-// ============================================
-// MOBILE PERFORMANCE OPTIMIZATIONS
-// ============================================
-@media (max-width: 768px) {
-  // Simplify process step effects
-  .process-timeline::before {
-    box-shadow: 0 0 5px $neon-cyan;
-    opacity: 0.4;
-  }
-
-  .process-step {
-    &::before,
-    &::after {
-      display: none;
-    }
-
-    &:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba($neon-cyan, 0.1);
-    }
-
-    &__number {
-      text-shadow: 0 0 10px rgba($neon-cyan, 0.3);
-    }
-  }
-
-  // Simplify guarantee cards
-  .guarantee-card {
-    &:hover {
-      transform: translateY(-3px);
-
-      .guarantee-card__icon {
-        box-shadow: 0 0 15px rgba($neon-green, 0.2);
-      }
-    }
-  }
-
-  // Simplify metric cards
-  .metric-card {
-    &:hover {
-      transform: translateY(-2px);
-    }
-  }
-
-  // Reduce CTA glow
-  .about-cta {
-    background: linear-gradient(135deg, $darker-bg 0%, rgba($neon-magenta, 0.08) 50%, $darker-bg 100%);
-  }
-}
-
-@media (max-width: 500px) {
-  // Stack skills content
-  .skills-content {
-    gap: var(--spacing-md);
-  }
-
-  // Smaller process numbers
-  .process-step__number {
-    font-size: 2rem;
-    min-width: 50px;
   }
 }

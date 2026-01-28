@@ -1,51 +1,22 @@
-$neon-cyan: #00f5ff;
-$neon-magenta: #ff00ff;
-$neon-green: #00ff41;
-$neon-orange: #ff6b35;
-$dark-bg: #0a0a0f;
-$darker-bg: #050508;
-$dark-bg-transparent: rgba(10, 10, 15, 0.85);
-$darker-bg-transparent: rgba(5, 5, 8, 0.9);
+/* ========================================
+   PROJECTS PAGE STYLES - Clean & Professional
+   ======================================== */
 
 .projects-page {
   min-height: 100vh;
-  background: transparent;
+  background: var(--color-bg-primary);
 }
 
 // Hero Section
 .projects-hero {
   position: relative;
-  padding: calc(var(--spacing-xl) + 80px) 0 var(--spacing-xl);
-  overflow: hidden;
-  background: linear-gradient(180deg, $dark-bg-transparent 0%, $darker-bg-transparent 100%);
-
-  // Gradient orbs
-  &::before {
-    content: '';
-    position: absolute;
-    top: -150px;
-    left: -150px;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba($neon-cyan, 0.08) 0%, transparent 60%);
-    pointer-events: none;
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, $neon-cyan, $neon-magenta, transparent);
-    z-index: 3;
-  }
+  padding: calc(var(--spacing-2xl) + 80px) 0 var(--spacing-xl);
+  background: linear-gradient(135deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 100%);
 
   &__content {
     position: relative;
     z-index: 2;
-    max-width: 700px;
+    max-width: 800px;
   }
 
   &__title {
@@ -55,42 +26,51 @@ $darker-bg-transparent: rgba(5, 5, 8, 0.9);
 
   &__description {
     font-size: 1.2rem;
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--color-text-secondary);
     line-height: 1.8;
+    margin-bottom: var(--spacing-lg);
   }
 
-  &__grid {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image:
-      radial-gradient(ellipse 500px 400px at 80% 50%, rgba($neon-magenta, 0.05), transparent 60%),
-      linear-gradient(rgba($neon-cyan, 0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba($neon-cyan, 0.03) 1px, transparent 1px);
-    background-size: 100% 100%, 50px 50px, 50px 50px;
-    z-index: 1;
+  &__stats {
+    display: flex;
+    gap: var(--spacing-xl);
+    flex-wrap: wrap;
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .stat-value {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--color-accent);
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--color-text-secondary);
+    }
   }
 }
 
 .section-label {
   display: inline-block;
-  font-family: var(--font-mono);
   font-size: 0.85rem;
-  color: $neon-cyan;
-  margin-bottom: var(--spacing-sm);
+  font-weight: 600;
+  color: var(--color-accent);
+  text-transform: uppercase;
   letter-spacing: 0.1em;
+  margin-bottom: var(--spacing-xs);
 }
 
 // Filters
 .projects-filters {
   padding: var(--spacing-md) 0;
-  border-bottom: 1px solid rgba($neon-cyan, 0.1);
+  border-bottom: 1px solid var(--color-border);
   position: sticky;
   top: 70px;
-  background: rgba($dark-bg, 0.95);
-  backdrop-filter: blur(10px);
+  background: var(--color-bg-primary);
   z-index: 100;
 }
 
@@ -105,102 +85,56 @@ $darker-bg-transparent: rgba(5, 5, 8, 0.9);
   align-items: center;
   gap: var(--spacing-xs);
   padding: 0.75rem 1.5rem;
-  background: linear-gradient(135deg, rgba($neon-cyan, 0.05), transparent);
-  border: none;
+  background: transparent;
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-full);
-  color: rgba(255, 255, 255, 0.6);
-  font-family: var(--font-mono);
+  color: var(--color-text-secondary);
   font-size: 0.85rem;
   cursor: pointer;
   transition: all var(--transition-normal);
-  position: relative;
-
-  // Gradient border
-  &::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: var(--radius-full);
-    padding: 1px;
-    background: linear-gradient(135deg, rgba($neon-cyan, 0.3), rgba($neon-magenta, 0.1));
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    pointer-events: none;
-    transition: all 0.3s ease;
-  }
 
   &:hover {
-    color: $neon-cyan;
-    box-shadow: 0 0 20px rgba($neon-cyan, 0.2);
-
-    &::before {
-      background: linear-gradient(135deg, $neon-cyan, $neon-magenta);
-    }
+    color: var(--color-text);
+    border-color: var(--color-border-hover);
   }
 
   &.active {
-    background: linear-gradient(135deg, $neon-cyan, $neon-magenta);
-    color: $dark-bg;
-    box-shadow: 0 0 30px rgba($neon-cyan, 0.4);
-
-    &::before {
-      opacity: 0;
-    }
-
-    .filter-btn__count {
-      background: rgba(0, 0, 0, 0.3);
-      color: $dark-bg;
-    }
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: var(--color-white);
   }
 
   &__count {
     padding: 0.2rem 0.5rem;
-    background: rgba($neon-cyan, 0.15);
+    background: rgba(255, 255, 255, 0.1);
     border-radius: var(--radius-full);
     font-size: 0.75rem;
-    color: $neon-cyan;
-    transition: all var(--transition-normal);
   }
+}
+
+// Featured Section
+.featured-section {
+  padding: var(--spacing-xl) 0 var(--spacing-md);
+  background: var(--color-bg-secondary);
+}
+
+.featured-header {
+  margin-bottom: var(--spacing-md);
+}
+
+.featured-wrapper {
+  max-width: 1000px;
 }
 
 // Projects Grid
 .projects-grid-section {
   padding: var(--spacing-xl) 0;
-  position: relative;
-  overflow: hidden;
-
-  // Gradient orbs
-  &::before {
-    content: '';
-    position: absolute;
-    top: 30%;
-    right: -200px;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba($neon-magenta, 0.05) 0%, transparent 60%);
-    pointer-events: none;
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 20%;
-    left: -200px;
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, rgba($neon-cyan, 0.05) 0%, transparent 60%);
-    pointer-events: none;
-  }
 }
 
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--spacing-md);
-
-  // Optimize scroll performance
-  contain: layout style;
 
   @media (max-width: 1100px) {
     grid-template-columns: repeat(2, 1fr);
@@ -209,23 +143,12 @@ $darker-bg-transparent: rgba(5, 5, 8, 0.9);
   @media (max-width: 600px) {
     grid-template-columns: 1fr;
   }
-
-  // Video optimization for smooth scroll
-  video {
-    will-change: transform;
-    transform: translateZ(0);
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    contain: paint;
-    image-rendering: optimizeSpeed;
-  }
 }
 
 .project-item {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.6s ease, transform 0.6s ease;
-  contain: layout style paint;
 
   &.visible {
     opacity: 1;
@@ -236,118 +159,134 @@ $darker-bg-transparent: rgba(5, 5, 8, 0.9);
 .no-projects {
   text-align: center;
   padding: var(--spacing-xl);
-  color: rgba(255, 255, 255, 0.5);
-  font-family: var(--font-mono);
+  color: var(--color-text-muted);
 }
 
 // CTA Section
 .projects-cta {
-  padding: var(--spacing-xl) 0;
-  background: linear-gradient(135deg, $darker-bg-transparent 0%, rgba($neon-magenta, 0.08) 50%, $darker-bg-transparent 100%);
-  border-top: 1px solid rgba($neon-magenta, 0.2);
+  padding: var(--spacing-2xl) 0;
+  background: linear-gradient(135deg, var(--color-bg-secondary) 0%, var(--color-bg-primary) 100%);
+  border-top: 1px solid var(--color-border);
 }
 
 .cta-content {
   text-align: center;
-  max-width: 600px;
+  max-width: 650px;
   margin: 0 auto;
+
+  .cta-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid var(--color-accent);
+    border-radius: var(--radius-full);
+    color: var(--color-accent);
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-md);
+  }
 
   h2 {
     font-size: clamp(2rem, 4vw, 3rem);
     margin-bottom: var(--spacing-sm);
   }
 
-  p {
-    color: rgba(255, 255, 255, 0.6);
+  > p {
+    color: var(--color-text-secondary);
+    font-size: 1.1rem;
+    line-height: 1.7;
     margin-bottom: var(--spacing-lg);
   }
+}
+
+.cta-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: var(--spacing-md);
 
   .btn {
     display: inline-flex;
-    gap: var(--spacing-xs);
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    border-radius: var(--radius-full);
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
 
     svg {
-      transition: transform var(--transition-fast);
+      transition: transform 0.3s ease;
     }
 
     &:hover svg {
-      transform: translateX(5px);
-    }
-  }
-}
-
-// ============================================
-// MOBILE PERFORMANCE OPTIMIZATIONS
-// ============================================
-@media (max-width: 768px) {
-  // Simplify hero background effects
-  .projects-hero {
-    &::before {
-      opacity: 0.5;
-    }
-
-    &::after {
-      height: 1px;
-    }
-
-    &__grid {
-      background-size: 100% 100%, 40px 40px, 40px 40px;
+      transform: translateX(4px);
     }
   }
 
-  // Simplify filter buttons
-  .filter-btn {
-    padding: 0.6rem 1rem;
+  .btn--primary {
+    background: var(--color-accent);
+    color: white;
+    border: none;
 
     &:hover {
-      box-shadow: none;
-    }
-
-    &.active {
-      box-shadow: 0 0 15px rgba($neon-cyan, 0.3);
+      background: #2563eb;
+      box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
     }
   }
 
-  // Reduce background orbs
-  .projects-grid-section {
-    &::before,
-    &::after {
-      opacity: 0.3;
+  .btn--secondary {
+    background: transparent;
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+
+    &:hover {
+      border-color: var(--color-accent);
+      color: var(--color-accent);
     }
-  }
 
-  // Optimize project items
-  .project-item {
-    contain: layout paint;
-  }
+    svg {
+      transition: none;
+    }
 
-  // Optimize videos
-  .projects-grid video {
-    will-change: auto;
-    transform: none;
-    contain: layout paint;
+    &:hover svg {
+      transform: none;
+    }
   }
 }
 
-@media (max-width: 500px) {
-  // Smaller filter buttons
-  .filter-btn {
-    font-size: 0.75rem;
-    padding: 0.5rem 0.75rem;
+.cta-reassurance {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
 
-    &__count {
-      font-size: 0.65rem;
-      padding: 0.15rem 0.35rem;
+  svg {
+    color: #10b981;
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .projects-hero__stats {
+    gap: var(--spacing-lg);
+
+    .stat-value {
+      font-size: 1.5rem;
     }
   }
 
-  // Simplify grid section
-  .projects-grid-section {
-    padding: var(--spacing-md) 0;
+  .cta-actions {
+    flex-direction: column;
+    align-items: center;
 
-    &::before,
-    &::after {
-      display: none;
+    .btn {
+      width: 100%;
+      max-width: 300px;
+      justify-content: center;
     }
   }
 }

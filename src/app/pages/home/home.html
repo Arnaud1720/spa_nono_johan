@@ -1,490 +1,378 @@
 <!-- Hero Section -->
-<app-hero></app-hero>
+<section class="hero">
+  <div class="container">
+    <div class="hero__content">
+      <div class="hero__left">
+        <div class="hero__visual">
+          <div class="hero__shape"></div>
+          <span class="hero__visual-label">Communication</span>
+        </div>
+      </div>
+      <div class="hero__right">
+        <div class="hero__tagline">
+          <span>Écouter.</span>
+          <span>Créer.</span>
+          <span>Développer.</span>
+        </div>
+        <h1 class="hero__title">
+          Agence Nojo, créateur de <span class="text-gradient">solutions utiles</span>.
+        </h1>
+        <p class="hero__description">
+          Chez Nojo, nous travaillons main dans la main avec les entreprises pour clarifier
+          leur communication, accroître leur visibilité et transformer leurs ambitions en résultats concrets.
+        </p>
+        <a routerLink="/contact" class="btn btn--primary">
+          Contactez-nous
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
-<!-- Marquee Text Band -->
+<!-- Marquee Band -->
 <div class="marquee-band">
   <div class="marquee-track">
-    <span class="marquee-text">ANGULAR</span>
-    <span class="marquee-separator">✦</span>
-    <span class="marquee-text">TYPESCRIPT</span>
-    <span class="marquee-separator">✦</span>
-    <span class="marquee-text">GSAP</span>
-    <span class="marquee-separator">✦</span>
-    <span class="marquee-text">THREE.JS</span>
-    <span class="marquee-separator">✦</span>
-    <span class="marquee-text">TAURI</span>
-    <span class="marquee-separator">✦</span>
-    <span class="marquee-text">SCSS</span>
-    <span class="marquee-separator">✦</span>
-    <span class="marquee-text">ANIMATIONS</span>
-    <span class="marquee-separator">✦</span>
-    <span class="marquee-text">ANGULAR</span>
-    <span class="marquee-separator">✦</span>
-    <span class="marquee-text">TYPESCRIPT</span>
-    <span class="marquee-separator">✦</span>
-    <span class="marquee-text">GSAP</span>
-    <span class="marquee-separator">✦</span>
-    <span class="marquee-text">THREE.JS</span>
-    <span class="marquee-separator">✦</span>
-    <span class="marquee-text">TAURI</span>
-    <span class="marquee-separator">✦</span>
-    <span class="marquee-text">SCSS</span>
-    <span class="marquee-separator">✦</span>
-    <span class="marquee-text">ANIMATIONS</span>
-    <span class="marquee-separator">✦</span>
+    <span class="marquee-item">Site Web</span>
+    <span class="marquee-separator">—</span>
+    <span class="marquee-item">Logo</span>
+    <span class="marquee-separator">—</span>
+    <span class="marquee-item">Marketing</span>
+    <span class="marquee-separator">—</span>
+    <span class="marquee-item">SEO</span>
+    <span class="marquee-separator">—</span>
+    <span class="marquee-item">Identité Visuelle</span>
+    <span class="marquee-separator">—</span>
+    <span class="marquee-item">Print</span>
+    <span class="marquee-separator">—</span>
+    <span class="marquee-item">Site Web</span>
+    <span class="marquee-separator">—</span>
+    <span class="marquee-item">Logo</span>
+    <span class="marquee-separator">—</span>
+    <span class="marquee-item">Marketing</span>
+    <span class="marquee-separator">—</span>
+    <span class="marquee-item">SEO</span>
+    <span class="marquee-separator">—</span>
+    <span class="marquee-item">Identité Visuelle</span>
+    <span class="marquee-separator">—</span>
+    <span class="marquee-item">Print</span>
+    <span class="marquee-separator">—</span>
   </div>
 </div>
 
-<!-- Introduction Section -->
-<section class="section intro" #animatedSection>
+<!-- Agence Section -->
+<section class="section agency" #animatedSection>
   <div class="container">
-    <div class="intro__content">
-      <div class="intro__left fade-in">
-        <span class="section-number">01</span>
-        <h2 class="intro__title">
-          <span class="text-reveal">Nous créons des</span>
-          <span class="text-reveal"><em class="text-gradient">expériences digitales</em></span>
-          <span class="text-reveal">qui marquent les esprits</span>
+    <div class="agency__content">
+      <div class="agency__text fade-in">
+        <span class="section__label">Agence de communication</span>
+        <h2 class="agency__title">
+          Chaque entreprise a une <span class="text-gradient">histoire</span>.
         </h2>
+        <p class="agency__description">
+          Chez Nojo, nous adorons celles qui bougent, qui osent et qui se développent.
+          Nous vous aidons à faire briller votre savoir-faire, gagner en visibilité et
+          transformer vos idées en projets qui avancent vraiment.
+        </p>
+        <a routerLink="/projets" class="btn btn--outline">
+          Découvrir nos projets
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
       </div>
-      <div class="intro__right fade-in stagger-2">
-        <p class="intro__text">
-          Plus qu'un simple développeur, nous sommes des <strong>artisans du web</strong>.
-          Chaque ligne de code est pensée pour créer une expérience utilisateur fluide,
-          immersive et mémorable.
-        </p>
-        <p class="intro__text">
-          Notre approche combine <strong>design créatif</strong>, <strong>performance technique</strong>
-          et <strong>attention aux détails</strong> pour transformer vos idées en réalité digitale.
-        </p>
-        <div class="intro__cta">
-          <a routerLink="/a-propos" class="link-arrow">
-            <span>En savoir plus sur nous</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <line x1="7" y1="17" x2="17" y2="7"></line>
-              <polyline points="7 7 17 7 17 17"></polyline>
+      <div class="agency__visual fade-in stagger-1">
+        <div class="agency__image">
+          <div class="agency__image-placeholder">
+            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
             </svg>
-          </a>
+            <span>Photo équipe NOJO</span>
+          </div>
+          <div class="agency__logo-badge">NOJO</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Services Section -->
-<section class="section services" #animatedSection>
+<!-- Solutions Section -->
+<section class="section solutions" #animatedSection>
   <div class="container">
     <div class="section__header fade-in">
-      <span class="section-number">02</span>
-      <span class="section__label">Nos Services</span>
-      <h2 class="section__title">Ce que nous <span class="text-gradient">créons</span></h2>
-      <p class="section__description">
-        Des maquettes SPA modernes et performantes, conçues pour impressionner.
-      </p>
+      <span class="section__label">Nos solutions</span>
+      <h2 class="section__title">Nos solutions pour <span class="text-gradient">vos besoins</span></h2>
     </div>
 
-    <div class="services__grid">
-      <div class="service-card fade-in stagger-1" #animatedSection>
-        <div class="service-card__number">01</div>
-        <div class="service-card__icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-            <line x1="3" y1="9" x2="21" y2="9"></line>
-            <line x1="9" y1="21" x2="9" y2="9"></line>
-          </svg>
-        </div>
-        <h3 class="service-card__title">Single Page Applications</h3>
-        <p class="service-card__description">
-          Applications web ultra-rapides avec navigation instantanée,
-          routing dynamique et state management optimisé.
-        </p>
-        <ul class="service-card__features">
-          <li>Navigation fluide sans rechargement</li>
-          <li>Performance optimale</li>
-          <li>SEO friendly avec SSR</li>
-        </ul>
-      </div>
-
-      <div class="service-card fade-in stagger-2" #animatedSection>
-        <div class="service-card__number">02</div>
-        <div class="service-card__icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <circle cx="12" cy="12" r="10"></circle>
-            <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
-          </svg>
-        </div>
-        <h3 class="service-card__title">Design UI/UX Premium</h3>
-        <p class="service-card__description">
-          Interfaces élégantes et intuitives qui captivent vos utilisateurs
-          dès le premier regard.
-        </p>
-        <ul class="service-card__features">
-          <li>Design sur-mesure</li>
-          <li>Responsive & mobile-first</li>
-          <li>Accessibilité WCAG</li>
-        </ul>
-      </div>
-
-      <div class="service-card fade-in stagger-3" #animatedSection>
-        <div class="service-card__number">03</div>
-        <div class="service-card__icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-          </svg>
-        </div>
-        <h3 class="service-card__title">Animations & Interactions</h3>
-        <p class="service-card__description">
-          Micro-interactions, transitions fluides et animations
-          qui donnent vie à votre projet.
-        </p>
-        <ul class="service-card__features">
-          <li>Animations GSAP avancées</li>
-          <li>Effets 3D avec Three.js</li>
-          <li>Scroll-triggered animations</li>
-        </ul>
-      </div>
-
-      <div class="service-card fade-in stagger-4" #animatedSection>
-        <div class="service-card__number">04</div>
-        <div class="service-card__icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-            <line x1="8" y1="21" x2="16" y2="21"></line>
-            <line x1="12" y1="17" x2="12" y2="21"></line>
-          </svg>
-        </div>
-        <h3 class="service-card__title">Applications Desktop</h3>
-        <p class="service-card__description">
-          Transformez vos SPA en applications desktop natives
-          avec Tauri et Rust.
-        </p>
-        <ul class="service-card__features">
-          <li>Cross-platform (Win/Mac/Linux)</li>
-          <li>Léger et performant</li>
-          <li>Accès aux APIs système</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Featured Projects Section -->
-<section class="section projects-preview" #animatedSection>
-  <div class="container">
-    <div class="section__header fade-in">
-      <span class="section-number">03</span>
-      <span class="section__label">Portfolio</span>
-      <h2 class="section__title">Projets <span class="text-gradient">récents</span></h2>
-      <p class="section__description">
-        Voici une petite liste des projets que nous avons effectué jusqu'à maintenant.
-        Des vidéos de démonstration de nos maquettes sont disponibles dans notre dossier de présentation.
-      </p>
-    </div>
-
-    <div class="projects-showcase">
-      @for (project of featuredProjects; track project.id; let i = $index) {
-        <div class="project-showcase-card fade-in" [class]="'stagger-' + (i + 1)" #animatedSection>
-          <div class="project-showcase-card__media">
-            <video [src]="project.video" autoplay muted loop playsinline></video>
-          </div>
-          <div class="project-showcase-card__content">
-            <h3 class="project-showcase-card__title">{{ project.title }}</h3>
-            <p class="project-showcase-card__description">{{ project.description }}</p>
-            <div class="project-showcase-card__tech">
-              @for (tech of project.tech; track tech) {
-                <span class="tech-badge">{{ tech }}</span>
-              }
-            </div>
-            <a routerLink="/projets" class="project-showcase-card__link">
-              <span>Voir le projet</span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="7" y1="17" x2="17" y2="7"></line>
-                <polyline points="7 7 17 7 17 17"></polyline>
-              </svg>
-            </a>
-          </div>
-        </div>
-      }
-    </div>
-
-    <div class="projects-preview__cta fade-in">
-      <a routerLink="/projets" class="btn btn--primary">
-        Voir tous les projets
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <line x1="5" y1="12" x2="19" y2="12"></line>
-          <polyline points="12 5 19 12 12 19"></polyline>
+    <div class="donut-wrapper fade-in">
+      <div class="donut">
+        <!-- SVG Donut Chart -->
+        <svg class="donut__chart" viewBox="0 0 100 100">
+          <!-- Segment 1 - Lancer -->
+          <circle
+            class="donut__segment"
+            [class.active]="activeSolution === 0"
+            (click)="toggleSolution(0)"
+            cx="50" cy="50" r="40"
+            stroke-dasharray="62.83 251.32"
+            stroke-dashoffset="0"
+          />
+          <!-- Segment 2 - Développer -->
+          <circle
+            class="donut__segment"
+            [class.active]="activeSolution === 1"
+            (click)="toggleSolution(1)"
+            cx="50" cy="50" r="40"
+            stroke-dasharray="62.83 251.32"
+            stroke-dashoffset="-62.83"
+          />
+          <!-- Segment 3 - Capter -->
+          <circle
+            class="donut__segment"
+            [class.active]="activeSolution === 2"
+            (click)="toggleSolution(2)"
+            cx="50" cy="50" r="40"
+            stroke-dasharray="62.83 251.32"
+            stroke-dashoffset="-125.66"
+          />
+          <!-- Segment 4 - Moderniser -->
+          <circle
+            class="donut__segment"
+            [class.active]="activeSolution === 3"
+            (click)="toggleSolution(3)"
+            cx="50" cy="50" r="40"
+            stroke-dasharray="62.83 251.32"
+            stroke-dashoffset="-188.49"
+          />
         </svg>
-      </a>
-    </div>
-  </div>
-</section>
 
-<!-- Performance & SEO Excellence Section -->
-<section class="section expertise" #animatedSection>
-  <div class="container">
-    <div class="section__header fade-in">
-      <span class="section-number">04</span>
-      <span class="section__label">Excellence Technique</span>
-      <h2 class="section__title">Performance <span class="text-gradient">100%</span></h2>
-      <p class="section__description">
-        Nos maquettes SPA atteignent systématiquement les scores Lighthouse parfaits.
-        Chaque projet est optimisé pour offrir une expérience ultra-rapide et un référencement optimal.
-      </p>
-    </div>
+        <!-- Center Content -->
+        <div class="donut__center">
+          @if (activeSolution === null) {
+            <span class="donut__hint">Cliquez sur un segment</span>
+          }
+          @if (activeSolution === 0) {
+            <span class="donut__number">01</span>
+            <span class="donut__label">Lancer</span>
+          }
+          @if (activeSolution === 1) {
+            <span class="donut__number">02</span>
+            <span class="donut__label">Développer</span>
+          }
+          @if (activeSolution === 2) {
+            <span class="donut__number">03</span>
+            <span class="donut__label">Capter</span>
+          }
+          @if (activeSolution === 3) {
+            <span class="donut__number">04</span>
+            <span class="donut__label">Moderniser</span>
+          }
+        </div>
 
-    <div class="expertise__showcase">
-      <!-- Lighthouse Score Display -->
-      <div class="lighthouse-card fade-in stagger-1" #animatedSection>
-        <div class="lighthouse-card__header">
-          <svg class="lighthouse-icon" viewBox="0 0 24 24" width="32" height="32">
-            <path fill="currentColor" d="M12 2L4 7v10l8 5 8-5V7l-8-5zm0 2.18l6 3.75v7.14l-6 3.75-6-3.75V7.93l6-3.75z"/>
-            <circle fill="currentColor" cx="12" cy="12" r="3"/>
-          </svg>
-          <span>Google Lighthouse</span>
+        <!-- Labels around donut -->
+        <div class="donut__labels">
+          <span class="donut__ext-label" [class.active]="activeSolution === 0" style="top: 5%; left: 75%;">01</span>
+          <span class="donut__ext-label" [class.active]="activeSolution === 1" style="top: 75%; left: 85%;">02</span>
+          <span class="donut__ext-label" [class.active]="activeSolution === 2" style="top: 85%; left: 15%;">03</span>
+          <span class="donut__ext-label" [class.active]="activeSolution === 3" style="top: 5%; left: 5%;">04</span>
         </div>
-        <div class="lighthouse-card__scores">
-          <div class="score-item">
-            <div class="score-circle score-circle--perfect">
-              <span class="score-value">100</span>
-            </div>
-            <span class="score-label">Performance</span>
-          </div>
-          <div class="score-item">
-            <div class="score-circle score-circle--perfect">
-              <span class="score-value">100</span>
-            </div>
-            <span class="score-label">Accessibilité</span>
-          </div>
-          <div class="score-item">
-            <div class="score-circle score-circle--perfect">
-              <span class="score-value">100</span>
-            </div>
-            <span class="score-label">Bonnes pratiques</span>
-          </div>
-          <div class="score-item">
-            <div class="score-circle score-circle--perfect">
-              <span class="score-value">100</span>
-            </div>
-            <span class="score-label">SEO</span>
-          </div>
-        </div>
-        <p class="lighthouse-card__note">
-          Rapport type de nos projets - Optimisation garantie
-        </p>
       </div>
 
-      <!-- Performance Features -->
-      <div class="expertise__features fade-in stagger-2" #animatedSection>
-        <div class="expertise-feature">
-          <div class="expertise-feature__icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-            </svg>
+      <!-- Content Panel -->
+      <div class="donut__panel" [class.open]="activeSolution !== null">
+        @if (activeSolution === 0) {
+          <div class="donut__content">
+            <h3>Lancer votre marque</h3>
+            <p>Nouveau projet, nouvelle activité ? On vous accompagne pour construire des bases solides : identité visuelle, positionnement clair et premiers supports qui font la différence.</p>
           </div>
-          <div class="expertise-feature__content">
-            <h4>Temps de chargement &lt; 1s</h4>
-            <p>First Contentful Paint optimisé, lazy loading intelligent et code splitting automatique.</p>
+        }
+        @if (activeSolution === 1) {
+          <div class="donut__content">
+            <h3>Développer votre notoriété</h3>
+            <p>Faites-vous connaître et reconnaître. Avec Nojo, votre visibilité sur Google, les réseaux et les médias laisse une empreinte durable.</p>
           </div>
-        </div>
-
-        <div class="expertise-feature">
-          <div class="expertise-feature__icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="11" cy="11" r="8"></circle>
-              <path d="M21 21l-4.35-4.35"></path>
-            </svg>
+        }
+        @if (activeSolution === 2) {
+          <div class="donut__content">
+            <h3>Capter vos futurs clients</h3>
+            <p>Davantage de devis, d'appels et de contacts qualifiés ? Nojo fait de votre site et de vos campagnes des leviers concrets pour attirer vos futurs clients.</p>
           </div>
-          <div class="expertise-feature__content">
-            <h4>SEO Optimisé</h4>
-            <p>Meta tags dynamiques, SSR/SSG, sitemap automatique et structured data pour un référencement parfait.</p>
+        }
+        @if (activeSolution === 3) {
+          <div class="donut__content">
+            <h3>Moderniser votre entreprise</h3>
+            <p>Rafraîchir votre identité visuelle pour montrer qui vous êtes aujourd'hui. Une image à jour qui reflète votre évolution et vos ambitions.</p>
           </div>
-        </div>
-
-        <div class="expertise-feature">
-          <div class="expertise-feature__icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-            </svg>
-          </div>
-          <div class="expertise-feature__content">
-            <h4>Sécurité & Bonnes pratiques</h4>
-            <p>HTTPS, CSP headers, protection XSS et respect des standards W3C.</p>
-          </div>
-        </div>
-
-        <div class="expertise-feature">
-          <div class="expertise-feature__icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
-              <line x1="12" y1="18" x2="12.01" y2="18"></line>
-            </svg>
-          </div>
-          <div class="expertise-feature__content">
-            <h4>Mobile-First & PWA</h4>
-            <p>Applications installables, mode hors-ligne et expérience native sur tous les appareils.</p>
-          </div>
-        </div>
+        }
       </div>
     </div>
   </div>
 </section>
 
-<!-- Digital Marketing & Print Services Section -->
-<section class="section marketing-services" #animatedSection>
+<!-- Expertises Section -->
+<section class="section expertises" #animatedSection>
   <div class="container">
     <div class="section__header fade-in">
-      <span class="section-number">05</span>
-      <span class="section__label">Services Complémentaires</span>
-      <h2 class="section__title">Marketing <span class="text-gradient">Digital & Print</span></h2>
-      <p class="section__description">
-        Au-delà du web, nous accompagnons votre identité visuelle complète.
-        De la conception graphique à la stratégie marketing, nous avons les compétences pour vous démarquer.
-      </p>
+      <span class="section__label">Ce que nous faisons</span>
+      <h2 class="section__title">Nos <span class="text-gradient">Expertises</span></h2>
     </div>
 
-    <div class="marketing-grid">
-      <!-- Logo Design -->
-      <div class="marketing-card fade-in stagger-1" #animatedSection>
-        <div class="marketing-card__visual">
-          <div class="marketing-card__icon-wrap">
-            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+    <div class="expertises__grid">
+      <div class="expertise-box fade-in stagger-1" #animatedSection>
+        <div class="expertise-box__header">
+          <div class="expertise-box__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="3" y1="9" x2="21" y2="9"></line>
+              <line x1="9" y1="21" x2="9" y2="9"></line>
+            </svg>
+          </div>
+          <h3 class="expertise-box__title">Site Internet</h3>
+        </div>
+        <ul class="expertise-box__list">
+          <li>Site vitrine</li>
+          <li>Site e-commerce</li>
+          <li>Refonte & migration de site internet</li>
+          <li>Maintenance & hébergement</li>
+        </ul>
+      </div>
+
+      <div class="expertise-box fade-in stagger-2" #animatedSection>
+        <div class="expertise-box__header">
+          <div class="expertise-box__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+            </svg>
+          </div>
+          <h3 class="expertise-box__title">Stratégie et conseil</h3>
+        </div>
+        <ul class="expertise-box__list">
+          <li>Marketing stratégique et plan de communication</li>
+          <li>Stratégie de marque et identité visuelle</li>
+          <li>Logo</li>
+          <li>Études de marché</li>
+        </ul>
+      </div>
+
+      <div class="expertise-box fade-in stagger-3" #animatedSection>
+        <div class="expertise-box__header">
+          <div class="expertise-box__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M18 20V10"></path>
+              <path d="M12 20V4"></path>
+              <path d="M6 20v-6"></path>
+            </svg>
+          </div>
+          <h3 class="expertise-box__title">Marketing digital</h3>
+        </div>
+        <ul class="expertise-box__list">
+          <li>Audit SEO</li>
+          <li>Référencement naturel</li>
+          <li>Campagnes Google</li>
+          <li>E-mailing</li>
+          <li>Référencement local sur Google</li>
+        </ul>
+      </div>
+
+      <div class="expertise-box fade-in stagger-4" #animatedSection>
+        <div class="expertise-box__header">
+          <div class="expertise-box__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
               <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
               <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
               <path d="M2 2l7.586 7.586"></path>
               <circle cx="11" cy="11" r="2"></circle>
             </svg>
           </div>
+          <h3 class="expertise-box__title">Studio graphique</h3>
         </div>
-        <div class="marketing-card__content">
-          <h3>Création de Logos</h3>
-          <p>Logos uniques et mémorables qui reflètent l'identité de votre marque. Design vectoriel pour une qualité optimale sur tous supports.</p>
-          <ul class="marketing-card__list">
-            <li>Logo principal + variations</li>
-            <li>Charte graphique</li>
-            <li>Fichiers HD multi-formats</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Business Cards -->
-      <div class="marketing-card fade-in stagger-2" #animatedSection>
-        <div class="marketing-card__visual">
-          <div class="marketing-card__icon-wrap">
-            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <rect x="2" y="4" width="20" height="16" rx="2"></rect>
-              <line x1="6" y1="8" x2="10" y2="8"></line>
-              <line x1="6" y1="12" x2="18" y2="12"></line>
-              <line x1="6" y1="16" x2="14" y2="16"></line>
-            </svg>
-          </div>
-        </div>
-        <div class="marketing-card__content">
-          <h3>Cartes de Visite</h3>
-          <p>Cartes de visite professionnelles qui laissent une impression durable. Design moderne et impression haute qualité.</p>
-          <ul class="marketing-card__list">
-            <li>Design recto/verso</li>
-            <li>Finitions premium (mat, brillant, vernis)</li>
-            <li>Prêt pour impression</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Flyers -->
-      <div class="marketing-card fade-in stagger-3" #animatedSection>
-        <div class="marketing-card__visual">
-          <div class="marketing-card__icon-wrap">
-            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-              <polyline points="14 2 14 8 20 8"></polyline>
-              <line x1="16" y1="13" x2="8" y2="13"></line>
-              <line x1="16" y1="17" x2="8" y2="17"></line>
-              <polyline points="10 9 9 9 8 9"></polyline>
-            </svg>
-          </div>
-        </div>
-        <div class="marketing-card__content">
-          <h3>Flyers & Affiches</h3>
-          <p>Supports de communication impactants pour vos événements, promotions ou présentations commerciales.</p>
-          <ul class="marketing-card__list">
-            <li>Tous formats (A5, A4, A3...)</li>
-            <li>Design accrocheur</li>
-            <li>Fichiers print-ready CMJN</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Digital Marketing -->
-      <div class="marketing-card marketing-card--featured fade-in stagger-4" #animatedSection>
-        <div class="marketing-card__visual">
-          <div class="marketing-card__icon-wrap">
-            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M18 20V10"></path>
-              <path d="M12 20V4"></path>
-              <path d="M6 20v-6"></path>
-            </svg>
-          </div>
-        </div>
-        <div class="marketing-card__content">
-          <h3>Marketing Digital</h3>
-          <p>Stratégies digitales complètes pour booster votre visibilité en ligne et convertir vos visiteurs en clients.</p>
-          <ul class="marketing-card__list">
-            <li>Référencement SEO/SEA</li>
-            <li>Gestion réseaux sociaux</li>
-            <li>Campagnes publicitaires</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Social Media -->
-      <div class="marketing-card fade-in stagger-5" #animatedSection>
-        <div class="marketing-card__visual">
-          <div class="marketing-card__icon-wrap">
-            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <circle cx="18" cy="5" r="3"></circle>
-              <circle cx="6" cy="12" r="3"></circle>
-              <circle cx="18" cy="19" r="3"></circle>
-              <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
-              <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
-            </svg>
-          </div>
-        </div>
-        <div class="marketing-card__content">
-          <h3>Visuels Réseaux Sociaux</h3>
-          <p>Contenus graphiques optimisés pour Instagram, Facebook, LinkedIn et autres plateformes.</p>
-          <ul class="marketing-card__list">
-            <li>Posts & stories</li>
-            <li>Bannières & covers</li>
-            <li>Templates réutilisables</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Branding -->
-      <div class="marketing-card fade-in stagger-6" #animatedSection>
-        <div class="marketing-card__visual">
-          <div class="marketing-card__icon-wrap">
-            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-            </svg>
-          </div>
-        </div>
-        <div class="marketing-card__content">
-          <h3>Identité Visuelle</h3>
-          <p>Création d'une identité de marque cohérente et professionnelle sur tous vos supports de communication.</p>
-          <ul class="marketing-card__list">
-            <li>Charte graphique complète</li>
-            <li>Palette de couleurs</li>
-            <li>Typographies & guidelines</li>
-          </ul>
-        </div>
+        <ul class="expertise-box__list">
+          <li>Création de logo</li>
+          <li>Création de supports imprimés</li>
+          <li>Flyer, carte de visite</li>
+          <li>Dépliant, menu</li>
+        </ul>
       </div>
     </div>
+  </div>
+</section>
 
-    <div class="marketing-cta fade-in">
-      <p class="marketing-cta__text">Un projet en tête ? Discutons de vos besoins !</p>
-      <a routerLink="/contact" class="btn btn--primary">
-        Demander un devis
+<!-- Stats Banner -->
+<section class="stats-banner" #animatedSection>
+  <div class="stats-banner__bg"></div>
+  <div class="container">
+    <div class="stats-banner__content fade-in">
+      <div class="stats-banner__item">
+        <span class="stats-banner__number">300+</span>
+        <span class="stats-banner__label">Clients accompagnés</span>
+      </div>
+      <div class="stats-banner__divider"></div>
+      <div class="stats-banner__item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+          <circle cx="12" cy="12" r="3"></circle>
+        </svg>
+        <span class="stats-banner__label">À l'écoute</span>
+      </div>
+      <div class="stats-banner__divider"></div>
+      <div class="stats-banner__item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+        </svg>
+        <span class="stats-banner__label">Réactif</span>
+      </div>
+      <div class="stats-banner__divider"></div>
+      <div class="stats-banner__item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+          <polyline points="17 6 23 6 23 12"></polyline>
+        </svg>
+        <span class="stats-banner__label">Compétitif</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="section cta-section" #animatedSection>
+  <div class="container">
+    <div class="cta-content fade-in">
+      <h2 class="cta-content__title">Prêts à travailler <span class="text-gradient">ensemble</span> ?</h2>
+      <p class="cta-content__description">
+        Découvrez comment nous accompagnons artisans, TPE, PME et associations dans leurs projets.
+      </p>
+      <div class="cta-content__mockups">
+        <div class="mockup mockup--desktop">
+          <div class="mockup__frame">
+            <div class="mockup__notch"></div>
+          </div>
+          <div class="mockup__screen">
+            <video #desktopVideo autoplay loop muted playsinline>
+              <source src="/videos/bien_etre_pc.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <div class="mockup mockup--mobile">
+          <div class="mockup__frame">
+            <div class="mockup__notch"></div>
+          </div>
+          <div class="mockup__screen">
+            <video #mobileVideo autoplay loop muted playsinline>
+              <source src="/videos/bien_etre_mobile.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+      <a routerLink="/contact" class="btn btn--gradient">
+        Contactez-nous
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <line x1="5" y1="12" x2="19" y2="12"></line>
           <polyline points="12 5 19 12 12 19"></polyline>

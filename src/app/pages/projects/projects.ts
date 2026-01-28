@@ -71,11 +71,23 @@ export class Projects implements AfterViewInit {
     }
   ];
 
+  get featuredProject() {
+    return this.allProjects[0];
+  }
+
   get filteredProjects() {
     if (this.selectedFilter === 'all') {
       return this.allProjects;
     }
     return this.allProjects.filter(p => p.filterKey === this.selectedFilter);
+  }
+
+  get displayedProjects() {
+    if (this.selectedFilter === 'all') {
+      // Exclude the featured project when showing all
+      return this.allProjects.slice(1);
+    }
+    return this.filteredProjects;
   }
 
   constructor(private scrollService: ScrollService) {}

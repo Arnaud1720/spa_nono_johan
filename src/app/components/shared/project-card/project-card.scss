@@ -1,66 +1,31 @@
-$neon-cyan: #00f5ff;
-$neon-magenta: #ff00ff;
-$neon-green: #00ff41;
-$neon-orange: #ff6b35;
-$dark-bg: #0a0a0f;
+/* ========================================
+   PROJECT CARD - Clean & Professional Style
+   ======================================== */
 
 .project-card {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba($neon-cyan, 0.02));
+  background: var(--color-bg-secondary);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  transition: all var(--transition-normal);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   position: relative;
-
-  // Gradient border
-  &::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: var(--radius-lg);
-    padding: 1px;
-    background: linear-gradient(180deg, rgba($neon-cyan, 0.3), rgba($neon-magenta, 0.15), rgba($neon-cyan, 0.1));
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    pointer-events: none;
-    transition: all 0.4s ease;
-    z-index: 1;
-  }
-
-  // Animated top line
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, $neon-cyan, $neon-magenta, transparent);
-    transition: left 0.6s ease;
-    z-index: 2;
-  }
+  border: 1px solid var(--color-border);
 
   &:hover {
-    transform: translateY(-12px);
-    box-shadow:
-      0 0 40px rgba($neon-cyan, 0.15),
-      0 30px 60px rgba(0, 0, 0, 0.4);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    border-color: var(--color-accent);
 
-    &::before {
-      background: linear-gradient(180deg, $neon-cyan, $neon-magenta, $neon-cyan);
-    }
-
-    &::after {
-      left: 100%;
-    }
-
-    .project-card__image img,
     .project-card__media img,
     .project-card__media video {
-      transform: scale(1.1);
+      transform: scale(1.05);
     }
 
     .project-card__overlay {
+      opacity: 1;
+    }
+
+    .project-card__cta {
+      transform: translateY(0);
       opacity: 1;
     }
   }
@@ -69,8 +34,7 @@ $dark-bg: #0a0a0f;
     position: relative;
     aspect-ratio: 16 / 10;
     overflow: hidden;
-    background: rgba(0, 0, 0, 0.5);
-    contain: paint layout;
+    background: var(--color-bg-primary);
 
     img, video {
       width: 100%;
@@ -81,89 +45,52 @@ $dark-bg: #0a0a0f;
 
     video {
       display: block;
-      // GPU acceleration for smooth playback during scroll
-      will-change: transform, opacity;
-      transform: translate3d(0, 0, 0);
-      backface-visibility: hidden;
-      -webkit-backface-visibility: hidden;
-      perspective: 1000px;
-      contain: paint strict;
-      // Optimize rendering
-      image-rendering: auto;
-      -webkit-transform-style: preserve-3d;
-      transform-style: preserve-3d;
-    }
-  }
-
-  &__image {
-    position: relative;
-    aspect-ratio: 16 / 10;
-    overflow: hidden;
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform var(--transition-slow);
-      filter: brightness(0.9);
     }
   }
 
   &__overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
     background: linear-gradient(
       to bottom,
-      rgba($dark-bg, 0) 0%,
-      rgba($dark-bg, 0.9) 100%
+      transparent 30%,
+      rgba(0, 0, 0, 0.8) 100%
     );
     display: flex;
     align-items: flex-end;
-    justify-content: flex-end;
-    padding: var(--spacing-md);
+    justify-content: center;
+    padding: var(--spacing-lg);
     opacity: 0;
-    transition: opacity var(--transition-normal);
+    transition: opacity 0.4s ease;
   }
 
-  &__link {
-    display: flex;
+  &__cta {
+    display: inline-flex;
     align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 50px;
-    background: linear-gradient(135deg, rgba($neon-cyan, 0.1), transparent);
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--color-accent);
+    color: white;
     border: none;
-    border-radius: 50%;
-    color: $neon-cyan;
-    transition: all var(--transition-fast);
-    position: relative;
+    border-radius: var(--radius-full);
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.3s ease;
 
-    // Gradient border
-    &::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border-radius: 50%;
-      padding: 2px;
-      background: linear-gradient(135deg, $neon-cyan, $neon-magenta);
-      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      pointer-events: none;
-      transition: all 0.3s ease;
+    svg {
+      width: 18px;
+      height: 18px;
+      transition: transform 0.3s ease;
     }
 
     &:hover {
-      background: linear-gradient(135deg, $neon-cyan, $neon-magenta);
-      color: $dark-bg;
-      box-shadow: 0 0 30px rgba($neon-cyan, 0.6);
-      transform: scale(1.15);
+      background: var(--color-accent-hover, #2563eb);
 
-      &::before {
-        opacity: 0;
+      svg {
+        transform: translateX(4px);
       }
     }
   }
@@ -174,104 +101,108 @@ $dark-bg: #0a0a0f;
 
   &__category {
     display: inline-block;
-    font-family: var(--font-mono);
     font-size: 0.75rem;
-    font-weight: 500;
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: $neon-orange;
+    letter-spacing: 0.08em;
+    color: var(--color-accent);
     margin-bottom: var(--spacing-xs);
-
-    &::before {
-      content: '// ';
-      color: rgba(255, 255, 255, 0.3);
-    }
   }
 
   &__title {
     font-size: 1.25rem;
     font-weight: 600;
     margin-bottom: var(--spacing-xs);
-    color: #ffffff;
+    color: var(--color-text);
   }
 
   &__description {
     font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.5);
-    line-height: 1.5;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
     margin-bottom: var(--spacing-sm);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   &__tech {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--spacing-xs);
+    gap: 0.5rem;
 
     .tech-tag {
-      font-family: var(--font-mono);
       font-size: 0.7rem;
-      padding: 0.3rem 0.6rem;
-      background: linear-gradient(135deg, rgba($neon-cyan, 0.1), rgba($neon-magenta, 0.05));
-      border: 1px solid rgba($neon-cyan, 0.25);
-      border-radius: var(--radius-sm);
-      color: $neon-cyan;
+      font-weight: 500;
+      padding: 0.35rem 0.75rem;
+      background: var(--color-bg-primary);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-full);
+      color: var(--color-text-secondary);
       transition: all 0.3s ease;
 
       &:hover {
-        background: linear-gradient(135deg, rgba($neon-cyan, 0.2), rgba($neon-magenta, 0.1));
-        border-color: rgba($neon-cyan, 0.5);
-        box-shadow: 0 0 15px rgba($neon-cyan, 0.2);
+        border-color: var(--color-accent);
+        color: var(--color-accent);
       }
     }
   }
 }
 
-// ============================================
-// MOBILE PERFORMANCE OPTIMIZATIONS
-// ============================================
+// Featured card (larger)
+.project-card--featured {
+  grid-column: span 2;
+
+  .project-card__media {
+    aspect-ratio: 21 / 9;
+  }
+
+  .project-card__title {
+    font-size: 1.5rem;
+  }
+
+  .project-card__description {
+    -webkit-line-clamp: 3;
+    font-size: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    grid-column: span 1;
+
+    .project-card__media {
+      aspect-ratio: 16 / 10;
+    }
+  }
+}
+
+// Mobile optimizations
 @media (max-width: 768px) {
   .project-card {
-    // Simplify hover effects on mobile
     &:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+      transform: translateY(-4px);
     }
 
-    // Disable animated line on mobile
-    &::after {
-      display: none;
-    }
-
-    &__media {
-      contain: layout paint;
-
-      video {
-        will-change: auto;
-        transform: none;
-        perspective: none;
-        transform-style: flat;
-        contain: layout paint;
-      }
-    }
-
-    // Simpler overlay
     &__overlay {
-      background: linear-gradient(to bottom, transparent 60%, rgba($dark-bg, 0.85) 100%);
+      opacity: 1;
+      background: linear-gradient(
+        to bottom,
+        transparent 50%,
+        rgba(0, 0, 0, 0.7) 100%
+      );
     }
 
-    // Disable tech tag hover effects on mobile (no hover on touch)
-    &__tech .tech-tag:hover {
-      box-shadow: none;
+    &__cta {
+      transform: translateY(0);
+      opacity: 1;
+      padding: 0.6rem 1.2rem;
+      font-size: 0.85rem;
     }
   }
 }
 
 @media (max-width: 500px) {
   .project-card {
-    &:hover {
-      transform: translateY(-4px);
-    }
-
     &__content {
       padding: var(--spacing-sm);
     }

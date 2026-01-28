@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
 
 export interface Project {
   id: number;
@@ -15,10 +14,11 @@ export interface Project {
 @Component({
   selector: 'app-project-card',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule],
   templateUrl: './project-card.html',
   styleUrl: './project-card.scss',
 })
 export class ProjectCard {
   @Input() project!: Project;
+  @Input() featured = false;
 }
