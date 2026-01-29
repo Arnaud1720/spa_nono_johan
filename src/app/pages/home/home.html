@@ -5,6 +5,11 @@
       <div class="hero__left">
         <div class="hero__visual">
           <div class="hero__shape"></div>
+          <div class="hero__orbit">
+            <span class="orbit__word orbit__word--1">Écouter.</span>
+            <span class="orbit__word orbit__word--2">Créer.</span>
+            <span class="orbit__word orbit__word--3">Développer.</span>
+          </div>
           <span class="hero__visual-label">Communication</span>
         </div>
       </div>
@@ -87,15 +92,7 @@
       </div>
       <div class="agency__visual fade-in stagger-1">
         <div class="agency__image">
-          <div class="agency__image-placeholder">
-            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-              <circle cx="9" cy="7" r="4"></circle>
-              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-            </svg>
-            <span>Photo équipe NOJO</span>
-          </div>
+          <img src="/equipe-nojo.jpeg" alt="Équipe NOJO" class="agency__photo">
           <div class="agency__logo-badge">NOJO</div>
         </div>
       </div>
@@ -178,10 +175,10 @@
 
         <!-- Labels around donut -->
         <div class="donut__labels">
-          <span class="donut__ext-label" [class.active]="activeSolution === 0" style="top: 5%; left: 75%;">01</span>
-          <span class="donut__ext-label" [class.active]="activeSolution === 1" style="top: 75%; left: 85%;">02</span>
-          <span class="donut__ext-label" [class.active]="activeSolution === 2" style="top: 85%; left: 15%;">03</span>
-          <span class="donut__ext-label" [class.active]="activeSolution === 3" style="top: 5%; left: 5%;">04</span>
+          <span class="donut__ext-label" [class.active]="activeSolution === 0" style="top: 0; right: -10px;">Lancer</span>
+          <span class="donut__ext-label" [class.active]="activeSolution === 1" style="bottom: 0; right: -20px;">Développer</span>
+          <span class="donut__ext-label" [class.active]="activeSolution === 2" style="bottom: 0; left: -10px;">Capter</span>
+          <span class="donut__ext-label" [class.active]="activeSolution === 3" style="top: 0; left: -20px;">Moderniser</span>
         </div>
       </div>
 
@@ -341,6 +338,32 @@
   </div>
 </section>
 
+<!-- Logos Banner -->
+<section class="logos-banner" #animatedSection>
+  <div class="container">
+    <p class="logos-banner__title fade-in">Ils nous font confiance</p>
+  </div>
+  <div class="logos-track-wrapper">
+    <div class="logos-track">
+      <img src="/logos/logo_entreprise1.png" alt="Client 1">
+      <img src="/logos/logo_entreprise_2.png" alt="Client 2">
+      <img src="/logos/logoEntreprise5.png" alt="Client 5">
+      <img src="/logos/logoEntreprise7.png" alt="Client 7">
+      <img src="/logos/logoEntreprise8.png" alt="Client 8">
+      <img src="/logos/logoEntreprise9.png" alt="Client 9">
+      <img src="/logos/logoEntreprise10.png" alt="Client 10">
+      <!-- Duplicate for seamless loop -->
+      <img src="/logos/logo_entreprise1.png" alt="Client 1">
+      <img src="/logos/logo_entreprise_2.png" alt="Client 2">
+      <img src="/logos/logoEntreprise5.png" alt="Client 5">
+      <img src="/logos/logoEntreprise7.png" alt="Client 7">
+      <img src="/logos/logoEntreprise8.png" alt="Client 8">
+      <img src="/logos/logoEntreprise9.png" alt="Client 9">
+      <img src="/logos/logoEntreprise10.png" alt="Client 10">
+    </div>
+  </div>
+</section>
+
 <!-- CTA Section -->
 <section class="section cta-section" #animatedSection>
   <div class="container">
@@ -355,8 +378,8 @@
             <div class="mockup__notch"></div>
           </div>
           <div class="mockup__screen">
-            <video #desktopVideo autoplay loop muted playsinline>
-              <source src="/videos/bien_etre_pc.mp4" type="video/mp4">
+            <video autoplay loop muted playsinline>
+              <source src="/videos/bienEtreV3.mp4" type="video/mp4">
             </video>
           </div>
         </div>
@@ -365,8 +388,8 @@
             <div class="mockup__notch"></div>
           </div>
           <div class="mockup__screen">
-            <video #mobileVideo autoplay loop muted playsinline>
-              <source src="/videos/bien_etre_mobile.mp4" type="video/mp4">
+            <video autoplay loop muted playsinline>
+              <source src="/videos/bienEtreMobile.mp4" type="video/mp4">
             </video>
           </div>
         </div>

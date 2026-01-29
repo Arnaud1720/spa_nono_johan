@@ -45,8 +45,8 @@
 
   &__visual {
     position: relative;
-    width: 280px;
-    height: 280px;
+    width: 300px;
+    height: 300px;
     margin: 0 auto;
   }
 
@@ -57,6 +57,15 @@
     border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
     animation: morphShape 8s ease-in-out infinite;
     opacity: 0.9;
+    box-shadow:
+      0 0 60px rgba(59, 130, 246, 0.4),
+      0 0 100px rgba(139, 92, 246, 0.3);
+  }
+
+  &__orbit {
+    position: absolute;
+    inset: -40px;
+    animation: orbitRotate 20s linear infinite;
   }
 
   &__visual-label {
@@ -64,13 +73,22 @@
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--color-white);
-    background: rgba(0, 0, 0, 0.3);
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #f0abfc;
+    background: transparent;
     padding: 0.5rem 1rem;
-    border-radius: var(--radius-full);
-    backdrop-filter: blur(10px);
+    z-index: 10;
+    text-shadow:
+      0 0 5px #f0abfc,
+      0 0 10px #f0abfc,
+      0 0 20px #d946ef,
+      0 0 40px #d946ef,
+      0 0 60px #d946ef;
+    animation: neonFlicker 4s ease-in-out infinite;
+    animation-delay: 0.5s;
   }
 
   &__right {
@@ -117,11 +135,93 @@
   }
 }
 
+// ============================================
+// ORBIT NEON WORDS
+// ============================================
+.orbit__word {
+  position: absolute;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+  animation: neonFlicker 4s ease-in-out infinite;
+
+  &--1 {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #3b82f6;
+    text-shadow:
+      0 0 5px #3b82f6,
+      0 0 10px #3b82f6,
+      0 0 20px #3b82f6,
+      0 0 40px #3b82f6;
+    animation-delay: 0s;
+  }
+
+  &--2 {
+    bottom: 20%;
+    right: -10px;
+    color: #8b5cf6;
+    text-shadow:
+      0 0 5px #8b5cf6,
+      0 0 10px #8b5cf6,
+      0 0 20px #8b5cf6,
+      0 0 40px #8b5cf6;
+    animation-delay: 1s;
+  }
+
+  &--3 {
+    bottom: 20%;
+    left: -20px;
+    color: #06b6d4;
+    text-shadow:
+      0 0 5px #06b6d4,
+      0 0 10px #06b6d4,
+      0 0 20px #06b6d4,
+      0 0 40px #06b6d4;
+    animation-delay: 2s;
+  }
+}
+
 @keyframes morphShape {
   0%, 100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
   25% { border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%; }
   50% { border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%; }
   75% { border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%; }
+}
+
+@keyframes orbitRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes neonFlicker {
+  0%, 100% {
+    opacity: 1;
+    filter: brightness(1);
+  }
+  92% {
+    opacity: 1;
+    filter: brightness(1);
+  }
+  93% {
+    opacity: 0.7;
+    filter: brightness(0.7);
+  }
+  94% {
+    opacity: 1;
+    filter: brightness(1.2);
+  }
+  96% {
+    opacity: 0.85;
+    filter: brightness(0.85);
+  }
+  97% {
+    opacity: 1;
+    filter: brightness(1);
+  }
 }
 
 // ============================================
@@ -193,6 +293,31 @@
     @media (max-width: 900px) {
       order: -1;
     }
+  }
+
+  &__image {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+
+  &__photo {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--radius-lg);
+  }
+
+  &__logo-badge {
+    position: absolute;
+    bottom: var(--spacing-md);
+    right: var(--spacing-md);
+    background: var(--color-accent);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-sm);
+    font-weight: 700;
+    font-size: 0.9rem;
   }
 
   &__image {
@@ -353,20 +478,28 @@
   &__ext-label {
     position: absolute;
     font-family: var(--font-display);
-    font-size: 0.85rem;
-    font-weight: 700;
+    font-size: 0.75rem;
+    font-weight: 600;
     color: var(--color-text-muted);
     background: var(--color-bg-card);
     border: 1px solid var(--color-border);
-    padding: 0.35rem 0.6rem;
-    border-radius: var(--radius-sm);
+    padding: 0.4rem 0.8rem;
+    border-radius: var(--radius-full);
     transition: all 0.3s ease;
+    white-space: nowrap;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 
     &.active {
       color: var(--color-white);
       background: var(--color-accent);
       border-color: var(--color-accent);
-      transform: scale(1.1);
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 500px) {
+      font-size: 0.65rem;
+      padding: 0.3rem 0.6rem;
     }
   }
 
@@ -601,6 +734,85 @@
         border-bottom: none;
       }
     }
+  }
+}
+
+// ============================================
+// LOGOS BANNER
+// ============================================
+.logos-banner {
+  padding: var(--spacing-xl) 0;
+  background: var(--color-bg-tertiary);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  overflow: hidden;
+
+  &__title {
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--spacing-lg);
+  }
+}
+
+.logos-track-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  // Fade edges
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100px;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  &::before {
+    left: 0;
+    background: linear-gradient(to right, var(--color-bg-tertiary), transparent);
+  }
+
+  &::after {
+    right: 0;
+    background: linear-gradient(to left, var(--color-bg-tertiary), transparent);
+  }
+}
+
+.logos-track {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xl);
+  animation: scrollLogos 25s linear infinite;
+  width: max-content;
+
+  img {
+    height: 50px;
+    width: auto;
+    max-width: 120px;
+    object-fit: contain;
+    filter: grayscale(100%) opacity(0.6);
+    transition: all 0.3s ease;
+
+    &:hover {
+      filter: grayscale(0%) opacity(1);
+    }
+  }
+}
+
+@keyframes scrollLogos {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
   }
 }
 
