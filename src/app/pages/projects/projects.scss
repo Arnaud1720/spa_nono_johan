@@ -162,6 +162,112 @@
   color: var(--color-text-muted);
 }
 
+// Pagination
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-xl);
+  padding: var(--spacing-md);
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+
+  &__info {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+  }
+
+  &__select {
+    display: flex;
+    gap: 0.25rem;
+    background: var(--color-bg-primary);
+    padding: 0.25rem;
+    border-radius: var(--radius-md);
+  }
+
+  &__option {
+    padding: 0.5rem 0.75rem;
+    background: transparent;
+    border: none;
+    border-radius: var(--radius-sm);
+    color: var(--color-text-secondary);
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+      color: var(--color-text);
+    }
+
+    &.active {
+      background: var(--color-accent);
+      color: white;
+    }
+  }
+
+  &__controls {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: var(--color-bg-primary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    color: var(--color-text);
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover:not(:disabled) {
+      border-color: var(--color-accent);
+      color: var(--color-accent);
+    }
+
+    &:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+  }
+
+  &__current {
+    font-size: 0.9rem;
+    color: var(--color-text);
+    font-weight: 500;
+    min-width: 100px;
+    text-align: center;
+  }
+
+  &__total {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+
+    &__info,
+    &__controls,
+    &__total {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+}
+
 // CTA Section
 .projects-cta {
   padding: var(--spacing-2xl) 0;

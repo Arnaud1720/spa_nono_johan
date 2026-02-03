@@ -78,6 +78,57 @@
           <p>Aucun projet trouvé pour ce filtre.</p>
         </div>
       }
+
+      <!-- Pagination -->
+      @if (totalPages > 0) {
+        <div class="pagination">
+          <div class="pagination__info">
+            <span>Afficher</span>
+            <div class="pagination__select">
+              @for (option of itemsPerPageOptions; track option) {
+                <button
+                  class="pagination__option"
+                  [class.active]="itemsPerPage === option"
+                  (click)="setItemsPerPage(option)"
+                >
+                  {{ option }}
+                </button>
+              }
+            </div>
+            <span>par page</span>
+          </div>
+
+          <div class="pagination__controls">
+            <button
+              class="pagination__btn"
+              [disabled]="currentPage === 1"
+              (click)="prevPage()"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+
+            <span class="pagination__current">
+              Page {{ currentPage }} / {{ totalPages }}
+            </span>
+
+            <button
+              class="pagination__btn"
+              [disabled]="currentPage === totalPages"
+              (click)="nextPage()"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+          </div>
+
+          <div class="pagination__total">
+            {{ totalFilteredProjects }} projet(s)
+          </div>
+        </div>
+      }
     </div>
   </div>
 

@@ -15,6 +15,9 @@ export class Projects implements AfterViewInit {
   @ViewChildren('animatedItem') animatedItems!: QueryList<ElementRef>;
 
   selectedFilter = 'all';
+  currentPage = 1;
+  itemsPerPage = 5;
+  itemsPerPageOptions = [5, 10, 15];
 
   filters = [
     { key: 'all', label: 'Tous' },
@@ -83,11 +86,30 @@ export class Projects implements AfterViewInit {
   }
 
   get displayedProjects() {
+    let projects = this.filteredProjects;
     if (this.selectedFilter === 'all') {
       // Exclude the featured project when showing all
-      return this.allProjects.slice(1);
+      projects = this.allProjects.slice(1);
     }
-    return this.filteredProjects;
+    // Apply pagination
+    const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+    const endIndex = startIndex + this.itemsPerPage;
+    return projects.slice(startIndex, endIndex);
+  }
+
+  get totalPages(): number {
+    let projects = this.filteredProjects;
+    if (this.selectedFilter === 'all') {
+      projects = this.allProjects.slice(1);
+    }
+    return Math.ceil(projects.length / this.itemsPerPage);
+  }
+
+  get totalFilteredProjects(): number {
+    if (this.selectedFilter === 'all') {
+      return this.allProjects.length - 1; // Exclude featured
+    }
+    return this.filteredProjects.length;
   }
 
   constructor(private scrollService: ScrollService) {}
@@ -108,6 +130,7 @@ export class Projects implements AfterViewInit {
 
   setFilter(key: string): void {
     this.selectedFilter = key;
+    this.currentPage = 1; // Reset to first page when filter changes
   }
 
   getFilterCount(key: string): number {
@@ -115,5 +138,30 @@ export class Projects implements AfterViewInit {
       return this.allProjects.length;
     }
     return this.allProjects.filter(p => p.filterKey === key).length;
+  }
+
+  setItemsPerPage(count: number): void {
+    this.itemsPerPage = count;
+    this.currentPage = 1; // Reset to first page
+  }
+
+  goToPage(page: number): void {
+    if (page >= 1 && page <= this.totalPages) {
+      this.currentPage = page;
+      // Scroll to top of projects grid
+      window.scrollTo({ top: 400, behavior: 'smooth' });
+    }
+  }
+
+  nextPage(): void {
+    if (this.currentPage < this.totalPages) {
+      this.goToPage(this.currentPage + 1);
+    }
+  }
+
+  prevPage(): void {
+    if (this.currentPage > 1) {
+      this.goToPage(this.currentPage - 1);
+    }
   }
 }

@@ -9,6 +9,7 @@ export interface Project {
   video?: string;
   description: string;
   tech?: string[];
+  shopUrl?: string; // URL vers la boutique si disponible à l'achat
 }
 
 @Component({

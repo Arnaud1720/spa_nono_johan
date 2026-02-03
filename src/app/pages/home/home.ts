@@ -2,11 +2,12 @@ import { Component, AfterViewInit, ElementRef, QueryList, ViewChildren } from '@
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { ScrollService } from '../../services/scroll';
+import { NLogo3D } from '../../components/three/n-logo-3d/n-logo-3d';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, NLogo3D],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
